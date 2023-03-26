@@ -38,7 +38,7 @@ export default function Navbar() {
         <Container>
           <Toolbar>
             <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-              <Typography component="a" href="/" sx={{mt:1, mr:1}}>
+              <Typography component="a" href="/ingeniero-asesor" sx={{mt:1, mr:1}}>
                 <img
                   width={51}
                   height={55}
@@ -51,10 +51,10 @@ export default function Navbar() {
                 variant="h6"
                 color="inherit"
                 component="a"
-                href="/"
+                href="//ingeniero-asesor"
                 sx={{ textDecoration: "none" }}
               >
-                Ingeniero Asesor
+                Ingeniero Asesorrrr
               </Typography>
             </Box>
             {navbarState && (
