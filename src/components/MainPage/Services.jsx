@@ -33,19 +33,24 @@ import { Pagination, Navigation, EffectCoverflow } from "swiper";
 import { services } from "./servicesContans";
 
 const Services = () => {
-  
   const [open, setOpen] = useState(false);
   const [service, setService] = useState();
+  const [expand, setExpand] = useState(false);
+  const [imageState, setImageState] = useState(true);
   const openDrawer = (o, s) => {
     setOpen(o);
     setService(s);
     console.log(`open:${o} service:${s.title}`);
   };
   const handleClose = () => {
-    setOpen(false);
+    //setOpen(false);
     setTimeout(() => {
       window.location.href = "#contact";
     }, 500);
+  };
+  const expandDescription = () => {
+    setExpand(!expand);
+    setImageState(!imageState);
   };
   return (
     <Container sx={{ py: 5, backgroundColor: "" }}>
@@ -73,65 +78,116 @@ const Services = () => {
         el trabajo
       </Typography>
       <Box sx={{}}>
-      <Swiper        
-      sx={{width:{xs:"50%", md:"100%"}}}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        spaceBetween={20}
-        slidesPerView={3}
-        breakpoints={{
-          300: {
-            slidesPerView: 1,
-            centeredSlides: true
-          },
-          640: {
-            slidesPerView: 2,
-            centeredSlides: true
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 20
-          }
-        }}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {services.map(item => (
-        <SwiperSlide>
-          <Card elevation={5} sx={{ width:"100%" }}>
-            <CardMedia sx={{ height: 170 }}>
-              <img
-                src={item.image}
-                alt=""
-                srcset=""
-                style={{ objectFit: "fill", width: "100%", height: "100%" }}
-              />
-            </CardMedia>
-            <CardContent
-              sx={{ textOverflow: "...", height: 100, overflow: "hidden" }}
-            >
-              <Typography gutterBottom variant="h6" component="div">
-                {item.title}
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ textAlign: "justify" }}
-              >
-                {item.content}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button sx={{ fontWeight: "bold", mx: "auto", mt: 2 }} onClick={()=>alert('sdfghj')}>
-                Ver más
-              </Button>
-            </CardActions>
-          </Card>
-        </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          sx={{ width: { xs: "50%", md: "100%" } }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          spaceBetween={20}
+          slidesPerView={3}
+          breakpoints={{
+            300: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          }}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {services.map((item, index) => (
+            <SwiperSlide key={index} className="card-container">
+              <Card elevation={7} sx={{ height: 450}}>
+                <Box className="box1">
+                  {imageState && (
+                    <CardMedia sx={{ height: 190 }}>
+                      <img
+                        src={item.image}
+                        alt={`logo ${item.image}`}
+                        style={{
+                          objectFit: "fill",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    </CardMedia>
+                  )}
+
+                  <CardContent sx={{ height: 90, overflow: "hidden" }}>
+                    <Typography gutterBottom variant="h6" component="div">
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      gutterBottom
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ textAlign: "justify" }}
+                    >
+                      {item.content}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Grid container>
+                      <Grid item xs={12}>
+                        {expand && (
+                          <Button
+                            component="a"
+                            variant="contained"
+                            sx={{ width: "100%", backgroundColor: "#000032" }}
+                            onClick={handleClose}
+                          >
+                            Contactanos
+                          </Button>
+                        )}
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Button
+                          sx={{ width: "100%", fontWeight: "bold", my: 2 }}
+                          onClick={expandDescription}
+                        >
+                          {expand ? "Ver menos" : "Ver más"}
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </CardActions>
+                </Box>
+                <Box className="box2">
+                  <CardContent
+                    sx={{ height: 350, overflow: "hidden" }}
+                  >
+                    <Typography gutterBottom variant="h6" component="div">
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      gutterBottom
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ textAlign: "justify" }}
+                    >
+                      {item.content}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      component="a"
+                      variant="contained"
+                      sx={{ width: "100%", backgroundColor: "#000032" }}
+                      onClick={handleClose}
+                    >
+                      Contactanos
+                    </Button>
+                  </CardActions>
+                </Box>
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Box>
       {/* <Grid container gap={1} justifyContent="space-around">
         {servicess.map((item) => (
@@ -208,7 +264,6 @@ const Services = () => {
     </Container>
   );
 };
-
 export default Services;
 {
   /* <Container sx={{ p: 4 }}>

@@ -31,19 +31,19 @@ export default function Navbar() {
   const handleChangeNavbar = (value) => {
     setNavbarState(value);
   };
-
+  
   return (
     <>
       <AppBar position="fixed" sx={{ bgcolor: "#000032" }}>
         <Container>
           <Toolbar>
             <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-              <Typography component="a" href="/ingeniero-asesor" sx={{mt:1, mr:1}}>
+              <Typography component="a" href="/" sx={{mt:1, mr:1}}>
                 <img
                   width={51}
                   height={55}
                   src="images/logo-sst-colores-copia.png"
-                  alt="logo-sst-colores"
+                  alt="logo-sst"
                   loading="lazy"
                 />
               </Typography>
@@ -51,10 +51,10 @@ export default function Navbar() {
                 variant="h6"
                 color="inherit"
                 component="a"
-                href="//ingeniero-asesor"
+                href="/"
                 sx={{ textDecoration: "none" }}
               >
-                Ingeniero Asesorrrr
+                Ingeniero Asesor
               </Typography>
             </Box>
             {navbarState && (

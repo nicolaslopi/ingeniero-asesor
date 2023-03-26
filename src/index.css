@@ -12,4 +12,29 @@ code {
     monospace;
 }
 
+.box1{
+  width:100%;
+  transition: 3s;
+}
+.box2{
+  width:100%;
+  opacity:0;
+  visibility:hidden;
+  display:none;
+  transition: 3s;
+}
+
+.card-container:hover .box1{
+  opacity: 0.1;
+  visibility: hidden;
+  display:none;
+  transition: 3s; 
+}
+
+.card-container:hover .box2{
+  visibility: visible;
+  display:block;
+  transition: 3s;
+  opacity: 1;
+} 
       
