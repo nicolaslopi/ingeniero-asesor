@@ -159,7 +159,7 @@ const Services = () => {
                 </Box>
                 <Box className="box2">
                   <CardContent
-                    sx={{ height: 350, overflow: "hidden" }}
+                    sx={{ height: 300, overflow: "hidden", backgroundColor:"red" }}
                   >
                     <Typography gutterBottom variant="h6" component="div">
                       {item.title}
@@ -173,11 +173,11 @@ const Services = () => {
                       {item.content}
                     </Typography>
                   </CardContent>
-                  <CardActions>
+                  <CardActions sx={{pb:4}}>
                     <Button
                       component="a"
                       variant="contained"
-                      sx={{ width: "100%", backgroundColor: "#000032" }}
+                      sx={{ width: "100%", backgroundColor: "#000032"}}
                       onClick={handleClose}
                     >
                       Contactanos
