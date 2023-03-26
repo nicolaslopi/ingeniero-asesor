@@ -14,7 +14,6 @@ const Footer = () => {
             />
             </Typography>
             <p style={{color:'white'}}>Copyright © 2023 Ingeniero Asesor</p>
-            <Button variant="contained">Holaaa</Button>
             </Grid>
         </Container>
     );
