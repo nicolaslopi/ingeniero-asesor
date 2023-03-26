@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid, Typography } from "@mui/material";
 
 const Footer = () => {
     return (
@@ -14,6 +14,7 @@ const Footer = () => {
             />
             </Typography>
             <p style={{color:'white'}}>Copyright © 2023 Ingeniero Asesor</p>
+            <Button variant="contained">Holaaa</Button>
             </Grid>
         </Container>
     );
