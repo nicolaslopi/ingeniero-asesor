@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ingeniero-asesor/static/css/main.b3140b2c.css",
+    "main.js": "/ingeniero-asesor/static/js/main.648ff65c.js",
+    "static/media/logo.svg": "/ingeniero-asesor/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/ingeniero-asesor/index.html",
+    "main.b3140b2c.css.map": "/ingeniero-asesor/static/css/main.b3140b2c.css.map",
+    "main.648ff65c.js.map": "/ingeniero-asesor/static/js/main.648ff65c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3140b2c.css",
+    "static/js/main.648ff65c.js"
+  ]
+}
