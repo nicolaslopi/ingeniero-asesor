@@ -33,7 +33,7 @@ const services = [
 
 const servicess = [
     {
-      title: "Gestión Ambiental",
+      title: "Gestión Ambientallll",
       about:
         "Asesoría y consultaría para el diseño e implementación de Sistemas de Gestión Ambiental de acuerdo a la actividad económica de su empresa, soportados en el cumplimiento de los requisitos legales y estrategias innovadoras de gestión.",
       items: [
