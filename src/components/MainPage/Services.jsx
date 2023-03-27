@@ -135,21 +135,12 @@ const Services = () => {
                   <CardActions>
                     <Grid container>
                       <Grid item xs={12}>
-                          <Button
-                            component="a"
-                            variant="contained"
-                            sx={{ width: "100%", backgroundColor: "#000032" }}
-                            onClick={handleClose}
-                          >
-                            Contactanos
-                          </Button>
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Typography
+                        <Button
                           sx={{ width: "100%", fontWeight: "bold", my: 2 }}
+                          onClick={expandDescription}
                         >
-                          Ver más
-                        </Typography>
+                         Ver más
+                        </Button>
                       </Grid>
                     </Grid>
                   </CardActions>

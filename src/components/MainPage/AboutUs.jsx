@@ -77,7 +77,7 @@ const AboutUs = () => {
         trabajo.
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Button href="#servicios" variant="contained" sx={{fontSize: "20px", backgroundColor:'#f99f00', color:"#000032",borderColor:"#f99f00", "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>
+              <Button href="#servicios" variant="contained" sx={{fontSize: {xs: "16px", md:"20px"}, backgroundColor:'#f99f00', color:"#000032",borderColor:"#f99f00", "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>
                 Conoce nuestros servicios
               </Button>
             </Box>
