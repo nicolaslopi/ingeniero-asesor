@@ -16,6 +16,7 @@ import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import Facebook from "@mui/icons-material/Facebook";
 import Instagram from "@mui/icons-material/Instagram";
 import WhatsApp from "@mui/icons-material/WhatsApp";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ReactWhatsapp from "react-whatsapp";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -192,37 +193,43 @@ const Contact = () => {
           <Grid item xs={12} md={5}>
             <Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="mailto:ingenieroasesorsst@gmail.com"
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="mailto:ingenieroasesorsst@gmail.com"
                   target={"_blank"}>
                   <EmailIcon sx={{ mr: 2 }} />
                   <span style={{ color: "#000032" }}>ingenieroasesorsst@gmail.com</span>
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="tel:+573226174846"
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="tel:+573226174846"
                   target={"_blank"}>
                   <PhoneAndroidIcon sx={{ mr: 2 }} />
                   <span style={{ color: "#000032" }}>3122377845</span>
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="https://web.facebook.com/profile.php?id=100090006045246"
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="https://web.facebook.com/profile.php?id=100090006045246"
                   target={"_blank"}>
                   <Facebook sx={{ mr: 2 }} />
-                  <span style={{ color: "#000032" }}>Asesorías</span>
+                  <span style={{ color: "#000032" }}>Asesorías en Seguridad y Salud en el Trabajo</span>
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="https://www.instagram.com/ingenieroasesorsst/"
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="https://www.instagram.com/ingenieroasesorsst/"
                   target={"_blank"}>
                   <Instagram sx={{ mr: 2 }} />
-                  <span style={{ color: "#000032" }}>Asesorías</span>
+                  <span style={{ color: "#000032" }}>Asesorías en Seguridad y Salud en el Trabajo</span>
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px" }} component={ReactWhatsapp} number="57-322-617-4846" message="Hello World!!!">
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} component={ReactWhatsapp} number="57-322-617-4846" message="Hello World!!!">
                   <WhatsApp sx={{ mr: 2 }} />
-                  <span style={{ color: "#000032" }}>Asesorías</span>
+                  <span style={{ color: "#000032" }}>3122377845</span>
+                </Button>
+              </Box>
+              <Box>
+                <Button sx={{ color: "red", fontSize: "16px", textTransform:"none" }}>
+                  <LocationOnIcon sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>Cali, Valle del Cauca, Colombia.</span>
                 </Button>
               </Box>
             </Box>

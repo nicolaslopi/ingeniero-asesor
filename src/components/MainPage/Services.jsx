@@ -77,9 +77,9 @@ const Services = () => {
         Impulsamos la conciencia ambiental y la cultura de seguridad y salud en
         el trabajo
       </Typography>
-      <Box sx={{}}>
+      <Box sx={{ py:2}}>
         <Swiper
-          sx={{ width: { xs: "50%", md: "50%" } }}
+          style={{ py:3}}
           pagination={{
             clickable: true,
           }}
@@ -102,8 +102,8 @@ const Services = () => {
           className="mySwiper"
         >
           {services.map((item, index) => (
-            <SwiperSlide key={index} className="card-container" sx={{width:{xs:"50%", md:"80%"}}}>
-              <Card elevation={7} sx={{ height: 450}}>
+            <SwiperSlide key={index} className="card-container" sx={{width:{xs:"50%", md:"80%"},}}>
+              <Card elevation={10} sx={{ height: 450}}>
                 <Box className="box1">
                   {imageState && (
                     <CardMedia sx={{ height: 190 }}>
@@ -135,12 +135,12 @@ const Services = () => {
                   <CardActions>
                     <Grid container>
                       <Grid item xs={12}>
-                        <Button
-                          sx={{ width: "100%", fontWeight: "bold", my: 2 }}
+                        <Typography
+                          sx={{ width: "100%", fontWeight: "bold", my: 2, textAlign:"center", color:"#000032" }}
                           onClick={expandDescription}
                         >
                          Ver más
-                        </Button>
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardActions>
