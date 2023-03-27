@@ -9,9 +9,14 @@ import {
   Snackbar,
   TextField,
   Typography,
+  IconButton
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import Facebook from "@mui/icons-material/Facebook";
+import Instragram from "@mui/icons-material/Instagram";
+import WhatsApp from "@mui/icons-material/WhatsApp";
+import ReactWhatsapp from 'react-whatsapp';
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -106,7 +111,7 @@ const Contact = () => {
           fontWeight: "bold",
         }}
       >
-        Trabajemos juntos
+        Cotiza aquí tu servicio y trabajemos juntos
       </Typography>
       <Card elevation={5} sx={{ minWidth: 120, p: 2 }}>
         <Grid container justifyContent="space-around">
@@ -207,9 +212,35 @@ const Contact = () => {
                   fontSize: "20px",
                   my: 2,
                 }}
-              >
+              > 
                 <PhoneAndroidIcon sx={{ mx: 2 }}></PhoneAndroidIcon><a href="tel:+573226174846">
                 3122377845
+                </a>
+              </Typography>
+              <Typography
+                variant="body"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  my: 2,
+                }}
+              > 
+              <a href="https://web.facebook.com/profile.php?id=100090006045246" target={"_blank"}>
+              <Facebook sx={{mx:2}}/>Asesorías
+                </a>
+              </Typography>
+              <Typography
+                variant="body"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  my: 2,
+                }}
+              > 
+              <a href="https://www.instagram.com/ingenieroasesorsst/" target={"_blank"}>
+              <Instragram sx={{mx:2}}/>Asesorías
                 </a>
               </Typography>
             </Box>

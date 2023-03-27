@@ -159,7 +159,7 @@ const Services = () => {
                 </Box>
                 <Box className="box2">
                   <CardContent
-                    sx={{ height: 300, overflow: "hidden", backgroundColor:"red" }}
+                    sx={{ height: 300, overflow: "hidden"}}
                   >
                     <Typography gutterBottom variant="h6" component="div">
                       {item.title}

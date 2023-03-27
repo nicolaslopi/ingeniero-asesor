@@ -15,18 +15,12 @@ import {
           <List>
             {navLinks.map((item) => (
               <ListItem disablePadding key={item.title}>
-                <ListItemButton href={item.path} component="a">
+                <ListItemButton href={item.path} component="a" sx={{"&:hover": {backgroundColor:"#000032", color:"white"}}}>
                   {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
-                  <ListItemText primary={item.title} />
+                  <ListItemText primary={item.title} sx={{fontWeight:"", color:"#000032"}}/>
                 </ListItemButton>
               </ListItem> 
             ))}
-            <ListItem disablePadding>
-              <ListItemButton component={Link}>
-                {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
-                <ListItemText primary={'Cursos'} />
-              </ListItemButton>
-            </ListItem>
           </List>
         </nav>
         <Divider />

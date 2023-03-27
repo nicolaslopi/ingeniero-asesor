@@ -20,9 +20,10 @@ import { motion } from "framer-motion";
 // import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 const navLinks = [
   { title: "Inicio", path: "#" },
-  { title: "Servicios", path: "#services" },
-  { title: "Clientes", path: "#clients" },
-  { title: "Contacto", path: "#contact" },
+  { title: "Nosotros", path: "#nosotros" },
+  { title: "Servicios", path: "#servicios" },
+  { title: "Clientes", path: "#clientes" },
+  { title: "Contacto", path: "#contacto" },
 ];
 
 export default function Navbar() {
@@ -38,7 +39,16 @@ export default function Navbar() {
         <Container>
           <Toolbar>
             <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-              <Typography component="a" href="/" sx={{mt:1, mr:1}}>
+              <Typography
+                variant="h6"
+                color="inherit"
+                component="a"
+                href="/"
+                sx={{ textDecoration: "none", mr:1 }}
+              >
+                Ingeniero Asesor
+              </Typography>
+              <Typography component="a" href="/" sx={{mt:1}}>
                 <img
                   width={51}
                   height={55}
@@ -46,15 +56,6 @@ export default function Navbar() {
                   alt="logo-sst"
                   loading="lazy"
                 />
-              </Typography>
-              <Typography
-                variant="h6"
-                color="inherit"
-                component="a"
-                href="/"
-                sx={{ textDecoration: "none" }}
-              >
-                Ingeniero Asesor
               </Typography>
             </Box>
             {navbarState && (
