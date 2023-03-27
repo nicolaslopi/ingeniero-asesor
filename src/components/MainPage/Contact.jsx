@@ -1,4 +1,4 @@
-import * as React from 'react';  
+import * as React from "react";
 import {
   Alert,
   Box,
@@ -9,28 +9,28 @@ import {
   Snackbar,
   TextField,
   Typography,
-  IconButton
+  IconButton,
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import Facebook from "@mui/icons-material/Facebook";
-import Instragram from "@mui/icons-material/Instagram";
+import Instagram from "@mui/icons-material/Instagram";
 import WhatsApp from "@mui/icons-material/WhatsApp";
-import ReactWhatsapp from 'react-whatsapp';
+import ReactWhatsapp from "react-whatsapp";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [snackbar, setSnackbar] = useState({
     open: false,
     variant: "success",
     vertical: "top",
     horizontal: "center",
-    snackbarMessage: "Enviado con éxito"
+    snackbarMessage: "Enviado con éxito",
   });
   const { vertical, horizontal, open, variant, snackbarMessage } = snackbar;
   const form = useRef();
@@ -40,52 +40,53 @@ const Contact = () => {
       variant: "",
       vertical: "top",
       horizontal: "center",
-      snackbarMessage: ""})
-  }
+      snackbarMessage: "",
+    });
+  };
   const sendEmail = (e) => {
     e.preventDefault();
-    if(name == '' || email == '' || phone == '' || message == ''){
+    if (name == "" || email == "" || phone == "" || message == "") {
       setSnackbar({
         open: true,
         variant: "error",
         vertical: "top",
         horizontal: "center",
-        snackbarMessage: "Por favor llene todos los campos"
-      })
-    }else{
+        snackbarMessage: "Por favor llene todos los campos",
+      });
+    } else {
       emailjs
-      .sendForm(
-        "service_o8idcdc",
-        "template_fbtz4b9",
-        form.current,
-        "zQUdA2RITc4jr1SZv"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // setName('')
-          // setEmail('')
-          // setPhone('')
-          // setMessage('')
-          setSnackbar({
-            open: true,
-            variant: "success",
-            vertical: "top",
-            horizontal: "center",
-            snackbarMessage: "Enviado con éxito"
-          })
-        },
-        (error) => {
-          console.log(error.text);
-          setSnackbar({
-            open: true,
-            variant: "error",
-            vertical: "top",
-            horizontal: "center",
-            snackbarMessage: "Ha ocurrido un error"
-          })
-        }
-      );
+        .sendForm(
+          "service_o8idcdc",
+          "template_fbtz4b9",
+          form.current,
+          "zQUdA2RITc4jr1SZv"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            // setName('')
+            // setEmail('')
+            // setPhone('')
+            // setMessage('')
+            setSnackbar({
+              open: true,
+              variant: "success",
+              vertical: "top",
+              horizontal: "center",
+              snackbarMessage: "Enviado con éxito",
+            });
+          },
+          (error) => {
+            console.log(error.text);
+            setSnackbar({
+              open: true,
+              variant: "error",
+              vertical: "top",
+              horizontal: "center",
+              snackbarMessage: "Ha ocurrido un error",
+            });
+          }
+        );
     }
   };
 
@@ -100,7 +101,7 @@ const Contact = () => {
           fontWeight: "bold",
         }}
       >
-        Contactanos
+        Contacto
       </Typography>
       <Typography
         variant="h4"
@@ -176,10 +177,10 @@ const Contact = () => {
                       backgroundColor: "#f99f00",
                       color: "#000032",
                       fontSize: "20px",
-                      "&:hover":{
+                      "&:hover": {
                         backgroundColor: "#000032",
                         color: "#fff",
-                      }
+                      },
                     }}
                   >
                     Enviar
@@ -190,6 +191,78 @@ const Contact = () => {
           </Grid>
           <Grid item xs={12} md={5}>
             <Box>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="mailto:ingenieroasesorsst@gmail.com"
+                  target={"_blank"}>
+                  <EmailIcon sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>ingenieroasesorsst@gmail.com</span>
+                </Button>
+              </Box>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="tel:+573226174846"
+                  target={"_blank"}>
+                  <PhoneAndroidIcon sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>3122377845</span>
+                </Button>
+              </Box>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="https://web.facebook.com/profile.php?id=100090006045246"
+                  target={"_blank"}>
+                  <Facebook sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>Asesorías</span>
+                </Button>
+              </Box>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px" }} href="https://www.instagram.com/ingenieroasesorsst/"
+                  target={"_blank"}>
+                  <Instagram sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>Asesorías</span>
+                </Button>
+              </Box>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px" }} component={ReactWhatsapp} number="57-322-617-4846" message="Hello World!!!">
+                  <WhatsApp sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>Asesorías</span>
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Card>
+      <Snackbar
+        open={open}
+        autoHideDuration={3000}
+        anchorOrigin={{ vertical, horizontal }}
+        onClose={handleClose}
+      >
+        <Alert severity={variant} variant="filled" sx={{ fontSize: "18px" }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
+    </Container>
+  );
+};
+
+export default Contact;
+
+ {/* <Typography
+                variant="body"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  my: 2,
+                }}
+              >
+                <a
+                  style={{ textDecoration: "none", color: "black" }}
+                  href="https://web.facebook.com/profile.php?id=100090006045246"
+                  target={"_blank"}
+                >
+                  <Facebook sx={{ mx: 2, color: "#f99f00" }} />
+                  Asesorías
+                </a>
+              </Typography>
               <Typography
                 variant="body"
                 sx={{
@@ -199,9 +272,13 @@ const Contact = () => {
                   my: 2,
                 }}
               >
-                <EmailIcon sx={{ mx: 2 }}></EmailIcon>{" "}
-                <a href="mailto:ingenieroasesorsst@gmail.com">
-                  ingenieroasesorsst@gmail.com
+                <a
+                  style={{ textDecoration: "none", color: "#000032" }}
+                  href="https://www.instagram.com/ingenieroasesorsst/"
+                  target={"_blank"}
+                >
+                  <Instagram sx={{ mx: 2, color: "#f99f00" }} />
+                  Asesorías
                 </a>
               </Typography>
               <Typography
@@ -212,51 +289,13 @@ const Contact = () => {
                   fontSize: "20px",
                   my: 2,
                 }}
-              > 
-                <PhoneAndroidIcon sx={{ mx: 2 }}></PhoneAndroidIcon><a href="tel:+573226174846">
-                3122377845
+              >
+                <a
+                  style={{ textDecoration: "none", color: "#000032" }}
+                  href="https://www.instagram.com/ingenieroasesorsst/"
+                  target={"_blank"}
+                >
+                  <WhatsApp sx={{ mx: 2, color: "#f99f00" }} />
+                  Asesorías
                 </a>
-              </Typography>
-              <Typography
-                variant="body"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  my: 2,
-                }}
-              > 
-              <a href="https://web.facebook.com/profile.php?id=100090006045246" target={"_blank"}>
-              <Facebook sx={{mx:2}}/>Asesorías
-                </a>
-              </Typography>
-              <Typography
-                variant="body"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  my: 2,
-                }}
-              > 
-              <a href="https://www.instagram.com/ingenieroasesorsst/" target={"_blank"}>
-              <Instragram sx={{mx:2}}/>Asesorías
-                </a>
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
-      </Card>
-      <Snackbar
-        open={open}
-        autoHideDuration={3000}
-        anchorOrigin={{ vertical, horizontal}}
-        onClose={handleClose}
-      >
-        <Alert severity={variant} variant="filled" sx={{fontSize:"18px"}}>{snackbarMessage}</Alert>
-      </Snackbar>
-    </Container>
-  );
-};
-
-export default Contact;
+              </Typography> */}

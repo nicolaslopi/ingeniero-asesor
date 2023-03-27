@@ -45,8 +45,8 @@ const Services = () => {
   const handleClose = () => {
     //setOpen(false);
     setTimeout(() => {
-      window.location.href = "#contact";
-    }, 500);
+      window.location.href = "#contacto";
+    }, 300);
   };
   const expandDescription = () => {
     setExpand(!expand);
@@ -79,7 +79,7 @@ const Services = () => {
       </Typography>
       <Box sx={{}}>
         <Swiper
-          sx={{ width: { xs: "50%", md: "100%" } }}
+          sx={{ width: { xs: "50%", md: "50%" } }}
           pagination={{
             clickable: true,
           }}
@@ -102,7 +102,7 @@ const Services = () => {
           className="mySwiper"
         >
           {services.map((item, index) => (
-            <SwiperSlide key={index} className="card-container">
+            <SwiperSlide key={index} className="card-container" sx={{width:{xs:"50%", md:"80%"}}}>
               <Card elevation={7} sx={{ height: 450}}>
                 <Box className="box1">
                   {imageState && (
@@ -180,7 +180,7 @@ const Services = () => {
                       sx={{ width: "100%", backgroundColor: "#000032"}}
                       onClick={handleClose}
                     >
-                      Contactanos
+                      Contáctanos
                     </Button>
                   </CardActions>
                 </Box>

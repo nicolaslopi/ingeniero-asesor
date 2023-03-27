@@ -13,7 +13,7 @@ const Footer = () => {
                   loading="lazy"
             />
             </Typography>
-            <p style={{color:'white'}}>Copyright © 2023 Ingeniero Asesor</p>
+            <p style={{color:'white'}}>Copyright © 2023 Ingeniero Asesor SST</p>
             </Grid>
         </Container>
     );

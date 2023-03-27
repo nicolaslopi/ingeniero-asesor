@@ -70,11 +70,11 @@ const AboutUs = () => {
         }}
       >
         Ponemos a su disposición nuestra experiencia en asesoría y consultoría
-        ambiental, seguridad y salud en el trabajo, para el cumplimiento de los
-        requisitos legales y el diseño e implementación de sistemas integrados
+        en seguridad y salud en el trabajo, y medio ambiente, para el cumplimiento de los
+        requisitos legales, el diseño y la ejecución de sistemas integrados
         de gestión, impulsando a las empresas al logro de sus objetivos y metas
         demostrando conciencia ambiental y cultura de seguridad y salud en el
-        trabajo
+        trabajo.
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Button href="#servicios" variant="contained" sx={{fontSize: "20px", backgroundColor:'#f99f00', color:"#000032",borderColor:"#f99f00", "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>

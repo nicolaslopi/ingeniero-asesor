@@ -39,16 +39,7 @@ export default function Navbar() {
         <Container>
           <Toolbar>
             <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-              <Typography
-                variant="h6"
-                color="inherit"
-                component="a"
-                href="/"
-                sx={{ textDecoration: "none", mr:1 }}
-              >
-                Ingeniero Asesor
-              </Typography>
-              <Typography component="a" href="/" sx={{mt:1}}>
+            <Typography component="a" href="/" sx={{mt:1, mr:1}}>
                 <img
                   width={51}
                   height={55}
@@ -56,6 +47,15 @@ export default function Navbar() {
                   alt="logo-sst"
                   loading="lazy"
                 />
+              </Typography>
+              <Typography
+                variant="h6"
+                color="inherit"
+                component="a"
+                href="/"
+                sx={{ textDecoration: "none"}}
+              >
+                Ingeniero Asesor SST
               </Typography>
             </Box>
             {navbarState && (
