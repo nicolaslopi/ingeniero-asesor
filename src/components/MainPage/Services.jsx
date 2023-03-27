@@ -135,7 +135,6 @@ const Services = () => {
                   <CardActions>
                     <Grid container>
                       <Grid item xs={12}>
-                        {expand && (
                           <Button
                             component="a"
                             variant="contained"
@@ -144,15 +143,13 @@ const Services = () => {
                           >
                             Contactanos
                           </Button>
-                        )}
                       </Grid>
                       <Grid item xs={12}>
-                        <Button
+                        <Typography
                           sx={{ width: "100%", fontWeight: "bold", my: 2 }}
-                          onClick={expandDescription}
                         >
-                          {expand ? "Ver menos" : "Ver más"}
-                        </Button>
+                          Ver más
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardActions>
