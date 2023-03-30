@@ -18,7 +18,9 @@ import {
   DialogActions,
   Divider,
   CardMedia,
+  Hidden,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import SendIcon from "@mui/icons-material/Send";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -31,11 +33,12 @@ import "swiper/css/effect-coverflow";
 import { Pagination, Navigation, EffectCoverflow } from "swiper";
 
 import { services } from "./servicesContans";
+import { padding } from "@mui/system";
 
 const Services = () => {
   const [open, setOpen] = useState(false);
   const [service, setService] = useState();
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(true);
   const [imageState, setImageState] = useState(true);
   const openDrawer = (o, s) => {
     setOpen(o);
@@ -62,6 +65,10 @@ const Services = () => {
           mb: 3,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateY:100, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
       >
         Servicios
       </Typography>
@@ -73,13 +80,36 @@ const Services = () => {
           fontWeight: "bold",
           textAlign: "center",
         }}
+        component={motion.div}
+        initial={{translateY:100, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
       >
         Impulsamos la conciencia ambiental y la cultura de seguridad y salud en
         el trabajo
       </Typography>
-      <Box sx={{ py:2}}>
+      <Divider
+        sx={{
+          backgroundColor: "#000032",
+          width: "40%",
+          height: 3,
+          mx: "auto",
+          my: 2,
+        }}
+        component={motion.div}
+        initial={{translateX:100, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
+      />
+      <Box sx={{ py: 2, backgroundColor: "white" }} >
         <Swiper
-          style={{ py:3}}
+          style={{
+            backgroundColor: "white",
+            paddingBottom: 3,
+            paddingTop: 3,
+            paddingLeft: 3,
+            paddingRight: 3,
+          }}
           pagination={{
             clickable: true,
           }}
@@ -99,79 +129,139 @@ const Services = () => {
             },
           }}
           modules={[Pagination, Navigation]}
-          className="mySwiper"
+          className=""
         >
           {services.map((item, index) => (
-            <SwiperSlide key={index} className="card-container" sx={{width:{xs:"50%", md:"80%"},}}>
-              <Card elevation={10} sx={{ height: 450}}>
-                <Box className="box1">
-                  {imageState && (
-                    <CardMedia sx={{ height: 190 }}>
-                      <img
-                        src={item.image}
-                        alt={`logo ${item.image}`}
-                        style={{
-                          objectFit: "fill",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    </CardMedia>
-                  )}
-
-                  <CardContent sx={{ height: 90, overflow: "hidden" }}>
-                    <Typography gutterBottom variant="h6" component="div">
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{ textAlign: "justify" }}
-                    >
-                      {item.content}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Grid container>
-                      <Grid item xs={12}>
-                        <Typography
-                          sx={{ width: "100%", fontWeight: "bold", my: 2, textAlign:"center", color:"#000032" }}
-                          onClick={expandDescription}
-                        >
-                         Ver más
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardActions>
-                </Box>
-                <Box className="box2">
-                  <CardContent
-                    sx={{ height: 300, overflow: "hidden"}}
+            <SwiperSlide
+              key={index}
+              style={{
+                width: { xs: "50%", md: "80%" },
+                backgroundColor: "white",
+              }}
+            >
+              <Card
+                elevation={6}
+                sx={{ height: {xs:"auto", md:350} }}
+                component={motion.div}
+                whileHover={{
+                  boxShadow: "3px 3px 2px 1px #000032",
+                }}
+                initial={{scale:0, opacity:0}} whileInView={{opacity:1, scale:1, transition:{delay:index-(index*0.9),duration:0.5}}}
+              >
+                {expand && (
+                  <Box
+                    component={motion.div}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    exit={{ opacity: 0 }}
                   >
-                    <Typography gutterBottom variant="h6" component="div">
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{ textAlign: "justify" }}
+                    {imageState && (
+                      <CardMedia sx={{ height: 210 }}>
+                        <img
+                          src={item.image}
+                          alt={`logo ${item.image}`}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                          }}
+                        />
+                      </CardMedia>
+                    )}
+
+                    <CardContent sx={{ height: 40, mt:2, overflow: "hidden", backgroundColor:""}}>
+                      <Typography gutterBottom variant="h6" component="div" sx={{textAlign:"center"}}>
+                        {item.title}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Grid container>
+                        <Grid item xs={12}>
+                          <Button
+                            sx={{
+                              width: "100%",
+                              fontWeight: "bold",
+                              mb: 6,
+                              textAlign: "center",
+                              color: "#000032",
+                            }}
+                            onClick={expandDescription}
+                          >
+                            Ver más
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </CardActions>
+                  </Box>
+                )}
+                {!expand && (
+                  <Box
+                    component={motion.div}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <CardContent
+                      sx={{ height: 210, overflow: "hidden", pt: 2 }}
                     >
-                      {item.content}
-                    </Typography>
-                  </CardContent>
-                  <CardActions sx={{pb:4}}>
-                    <Button
-                      component="a"
-                      variant="contained"
-                      sx={{ width: "100%", backgroundColor: "#000032"}}
-                      onClick={handleClose}
-                    >
-                      Contáctanos
-                    </Button>
-                  </CardActions>
-                </Box>
+                      <Typography gutterBottom variant="h6" component="div">
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        gutterBottom
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ textAlign: "justify" }}
+                      >
+                        {item.content}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Grid conatiner sx={{ width: "100%" }}>
+                        <Grid
+                          item
+                          xs={12}
+                          sx={{ width: "100%", textAlign: "center" }}
+                        >
+                          <Button
+                            component="a"
+                            variant="outlined"
+                            sx={{
+                              borderColor: "#000032",
+                              border: 2,
+                              color: "#000032",
+                              fontWeight: "bold",
+                              borderRadius: 50,
+                              mx: "auto",
+                              width: "90%",
+                              "&:hover": { backgroundColor: "#000032", border:2, color:"#fff",},
+                            }}
+                            onClick={handleClose}
+                          >
+                            Contáctanos
+                          </Button>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Button
+                            sx={{
+                              width: "100%",
+                              fontWeight: "bold",
+                              mt: 2,
+                              mb: 4,
+                              textAlign: "center",
+                              color: "#000032",
+                            }}
+                            onClick={expandDescription}
+                          >
+                            Ver menos
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </CardActions>
+                  </Box>
+                )}
               </Card>
             </SwiperSlide>
           ))}

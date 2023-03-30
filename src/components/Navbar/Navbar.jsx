@@ -17,6 +17,7 @@ import Instragram from "@mui/icons-material/Instagram";
 import WhatsApp from "@mui/icons-material/WhatsApp";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 // import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 const navLinks = [
   { title: "Inicio", path: "#" },
@@ -43,7 +44,7 @@ export default function Navbar() {
                 <img
                   width={51}
                   height={55}
-                  src="images/logo-sst-colores-copia.png"
+                  src="images/logo-sst-colores-copia-min.png"
                   alt="logo-sst"
                   loading="lazy"
                 />

@@ -22,6 +22,7 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {motion} from 'framer-motion';
 
 // Import Swiper styles
 import "swiper/css";
@@ -34,8 +35,8 @@ import { services } from "./servicesContans";
 
 const AboutUs = () => {
   return (
-    <Container sx={{ py: 5}}>
-        <Card elevation={7} sx={{backgroundColor:"", p:4}}>
+    <Container sx={{ py: 8,}}>
+        <Card elevation={7} sx={{backgroundColor:"",backgroundImage:"url('images/Sin-título-1-04.png')", py:4, px:8}}>
         <Typography
         variant="h2"
         sx={{
@@ -44,6 +45,10 @@ const AboutUs = () => {
           mb: 4,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateX:-100, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
       >
         Nosotros
       </Typography>
@@ -55,6 +60,10 @@ const AboutUs = () => {
           fontWeight: "bold",
           textAlign: "justify",
         }}
+        component={motion.div}
+        initial={{translateX:100, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
       >
         Somos un equipo de ingenieros especialistas en Seguridad y Salud en el
         Trabajo y Ambiente, con más de 8 años de experiencia, asesorando y
@@ -68,6 +77,10 @@ const AboutUs = () => {
           fontWeight: "bold",
           textAlign: "justify",
         }}
+        component={motion.div}
+        initial={{translateX:100, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
       >
         Ponemos a su disposición nuestra experiencia en asesoría y consultoría
         en seguridad y salud en el trabajo, y medio ambiente, para el cumplimiento de los
@@ -76,7 +89,7 @@ const AboutUs = () => {
         demostrando conciencia ambiental y cultura de seguridad y salud en el
         trabajo.
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }} component={motion.div} initial={{translateX:-100, opacity:0}} whileInView={{translateX:0, opacity:1}} transition={{duration:1}}>
               <Button href="#servicios" variant="contained" sx={{fontSize: {xs: "18px", md:"20px"}, backgroundColor:'#f99f00', color:"#000032",borderColor:"#f99f00", "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>
                 Conoce nuestros servicios
               </Button>

@@ -18,6 +18,7 @@ import {
   DialogActions,
   Divider,
 } from "@mui/material";
+import {motion} from 'framer-motion';
 
 const Clients = () => {
   const companies = [
@@ -42,8 +43,8 @@ const Clients = () => {
       src: "images/provi.jpeg",
     },
     {
-      title: "Cantera San Miguel",
-      src: "images/redSalud.jpeg",
+      title: "Yumbogas SAS",
+      src: "images/yumbogas-sas.jpeg",
     },
     {
       title: "Cantera San Miguel",
@@ -57,9 +58,25 @@ const Clients = () => {
       title: "Facmac",
       src: "images/facmac.jpg",
     },
+    {
+      title: "Cantera San Miguel",
+      src: "images/redSalud.jpeg",
+    },
+    {
+      title: "Distribuidora GTO",
+      src: "images/distribuidora-gto.jpeg",
+    },
+    {
+      title: "Universal de aires",
+      src: "images/universal-de-aires.jpeg",
+    },
+    {
+      title: "Naranjo SAS",
+      src: "images/Naranjo-sas.jpeg",
+    },
   ];
   return (
-    <Container sx={{ py: 5 }}>
+    <Container sx={{ pt: 8 }}>
       <Typography
         variant="h2"
         sx={{
@@ -68,6 +85,10 @@ const Clients = () => {
           mb: 4,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateX:-100, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
       >
         Clientes
       </Typography>
@@ -79,13 +100,29 @@ const Clients = () => {
           mb: 4,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateX:100, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
       >
         Nuestra experiencia transforma la gestión de las empresas
       </Typography>
-      .
-      <Grid container gap={1.5} justifyContent="space-around">
-        {companies.map((item) => (
-          <Grid item xs={3} md={1} sx={{display:"flex", alignItems: "center"}}>
+      <Divider
+        sx={{
+          backgroundColor: "#fff",
+          width: "40%",
+          height: 3,
+          mx: "auto",
+          my: 6,
+        }}
+        component={motion.div}
+        initial={{translateY:100, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
+      />
+      <Grid container gap={6} justifyContent="space-around">
+        {companies.map((item,index) => (
+          <Grid item xs={3} md={1} sx={{display:"flex", alignItems: "center"}} component={motion.div} initial={{scale:0, opacity:0}} whileInView={{opacity:1, scale:1, rotate:360, transition:{delay:index-(index*0.9),duration:1}}}>
             <Card elevation={5} sx={{ width: {xs:90, md:125} }}>
               <Typography
                 sx={{
@@ -95,7 +132,7 @@ const Clients = () => {
                   py: 0.5,
                 }}
               >
-                <img src={item.src} alt="" width="90%" style={{}} />
+                <img src={item.src} alt={item.title} width="100%" style={{objectFit:"fill"}} />
               </Typography>
             </Card>
           </Grid>

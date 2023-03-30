@@ -10,6 +10,7 @@ import {
   TextField,
   Typography,
   IconButton,
+  Divider,
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
@@ -20,6 +21,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ReactWhatsapp from "react-whatsapp";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -101,6 +103,10 @@ const Contact = () => {
           mb: 4,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateX:100, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
       >
         Contacto
       </Typography>
@@ -112,10 +118,30 @@ const Contact = () => {
           mb: 4,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateY:100, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
       >
         Cotiza aquí tu servicio y trabajemos juntos
       </Typography>
-      <Card elevation={5} sx={{ minWidth: 120, p: 2 }}>
+      <Divider
+        sx={{
+          backgroundColor: "#f99f00",
+          width: "40%",
+          height: 3,
+          mx: "auto",
+          my: 4,
+        }}
+        component={motion.div}
+        initial={{translateY:-100, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
+      />
+      <Card elevation={5} sx={{ minWidth: 120, p: 2 }} component={motion.div}
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
+        transition={{duration:1}}>
         <Grid container justifyContent="space-around">
           <Grid item xs={12} md={5}>
             <Box component="form" ref={form} onSubmit={sendEmail}>
