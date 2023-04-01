@@ -53,6 +53,20 @@ const AboutUs = () => {
       >
         Nosotros
       </Typography>
+      <Divider
+        sx={{
+          backgroundColor: "#f99f00",
+          width: "40%",
+          height: 3,
+          mx: "auto",
+          my: 4,
+        }}
+        component={motion.div}
+        initial={{translateY:-90, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
+        exit={{translateX:0}}
+      />
       <Typography
         variant="h5"
         sx={{
