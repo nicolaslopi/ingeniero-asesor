@@ -8,7 +8,7 @@ const Footer = () => {
                 <img
                   width={51}
                   height={55}
-                  src="images/logo-sst-colores-copia.png"
+                  src="images/logo-sst-colores-copia-min.png"
                   alt="logo-sst-colores"
                   loading="lazy"
             />

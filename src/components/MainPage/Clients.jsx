@@ -76,7 +76,7 @@ const Clients = () => {
     },
   ];
   return (
-    <Container sx={{ pt: 8 }}>
+    <Container sx={{ pt: 8, pb:{xs:2, md:0} }}>
       <Typography
         variant="h2"
         sx={{
@@ -86,9 +86,10 @@ const Clients = () => {
           fontWeight: "bold",
         }}
         component={motion.div}
-        initial={{translateX:-100, opacity:0}}
+        initial={{translateX:-90, opacity:0}}
         whileInView={{translateX:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Clientes
       </Typography>
@@ -101,9 +102,10 @@ const Clients = () => {
           fontWeight: "bold",
         }}
         component={motion.div}
-        initial={{translateX:100, opacity:0}}
+        initial={{translateX:90, opacity:0}}
         whileInView={{translateX:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Nuestra experiencia transforma la gestión de las empresas
       </Typography>
@@ -116,9 +118,10 @@ const Clients = () => {
           my: 6,
         }}
         component={motion.div}
-        initial={{translateY:100, opacity:0}}
+        initial={{translateY:90, opacity:0}}
         whileInView={{translateY:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       />
       <Grid container gap={6} justifyContent="space-around">
         {companies.map((item,index) => (

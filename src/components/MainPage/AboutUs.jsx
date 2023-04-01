@@ -46,9 +46,10 @@ const AboutUs = () => {
           fontWeight: "bold",
         }}
         component={motion.div}
-        initial={{translateX:-100, opacity:0}}
+        initial={{translateX:-90, opacity:0}}
         whileInView={{translateX:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0, }}
       >
         Nosotros
       </Typography>
@@ -61,9 +62,10 @@ const AboutUs = () => {
           textAlign: "justify",
         }}
         component={motion.div}
-        initial={{translateX:100, opacity:0}}
+        initial={{translateX:90, opacity:0}}
         whileInView={{translateX:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Somos un equipo de ingenieros especialistas en Seguridad y Salud en el
         Trabajo y Ambiente, con más de 8 años de experiencia, asesorando y
@@ -78,9 +80,10 @@ const AboutUs = () => {
           textAlign: "justify",
         }}
         component={motion.div}
-        initial={{translateX:100, opacity:0}}
+        initial={{translateX:90, opacity:0}}
         whileInView={{translateX:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Ponemos a su disposición nuestra experiencia en asesoría y consultoría
         en seguridad y salud en el trabajo, y medio ambiente, para el cumplimiento de los
@@ -89,7 +92,7 @@ const AboutUs = () => {
         demostrando conciencia ambiental y cultura de seguridad y salud en el
         trabajo.
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: "center" }} component={motion.div} initial={{translateX:-100, opacity:0}} whileInView={{translateX:0, opacity:1}} transition={{duration:1}}>
+      <Box sx={{ display: "flex", justifyContent: "center" }} component={motion.div} initial={{translateX:-90, opacity:0}} whileInView={{translateX:0, opacity:1}} transition={{duration:1}} exit={{translateX:0}}>
               <Button href="#servicios" variant="contained" sx={{fontSize: {xs: "18px", md:"20px"}, backgroundColor:'#f99f00', color:"#000032",borderColor:"#f99f00", "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>
                 Conoce nuestros servicios
               </Button>

@@ -33,13 +33,16 @@ import "swiper/css/effect-coverflow";
 import { Pagination, Navigation, EffectCoverflow } from "swiper";
 
 import { services } from "./servicesContans";
+import "./Services.css";
 import { padding } from "@mui/system";
 
 const Services = () => {
   const [open, setOpen] = useState(false);
   const [service, setService] = useState();
-  const [expand, setExpand] = useState(true);
+  const [expand, setExpand] = useState([]);
+  const [expandState, setExpandState] = useState(true);
   const [imageState, setImageState] = useState(true);
+  const cantidadServicios = [services.length];
   const openDrawer = (o, s) => {
     setOpen(o);
     setService(s);
@@ -51,10 +54,20 @@ const Services = () => {
       window.location.href = "#contacto";
     }, 300);
   };
-  const expandDescription = () => {
-    setExpand(!expand);
-    setImageState(!imageState);
+  const expandDescription = (index) => {
+    expand[index] = !expand[index];
+    setExpand(expand) 
+    //cantidadServicios[index] = !cantidadServicios[index]
+    //setImageState(!imageState);
   };
+  
+  useEffect(() => {
+    services.map((item,index)=>{
+      expand[index] = true
+      setExpand(expand)
+    })
+  }, [])
+  
   return (
     <Container sx={{ py: 5, backgroundColor: "" }}>
       <Typography
@@ -66,9 +79,10 @@ const Services = () => {
           fontWeight: "bold",
         }}
         component={motion.div}
-        initial={{translateY:100, opacity:0}}
+        initial={{translateY:90, opacity:0}}
         whileInView={{translateY:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Servicios
       </Typography>
@@ -81,9 +95,10 @@ const Services = () => {
           textAlign: "center",
         }}
         component={motion.div}
-        initial={{translateY:100, opacity:0}}
+        initial={{translateY:90, opacity:0}}
         whileInView={{translateY:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Impulsamos la conciencia ambiental y la cultura de seguridad y salud en
         el trabajo
@@ -97,9 +112,10 @@ const Services = () => {
           my: 2,
         }}
         component={motion.div}
-        initial={{translateX:100, opacity:0}}
+        initial={{translateX:90, opacity:0}}
         whileInView={{translateX:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       />
       <Box sx={{ py: 2, backgroundColor: "white" }} >
         <Swiper
@@ -148,8 +164,8 @@ const Services = () => {
                 }}
                 initial={{scale:0, opacity:0}} whileInView={{opacity:1, scale:1, transition:{delay:index-(index*0.9),duration:0.5}}}
               >
-                {expand && (
-                  <Box
+                {expand[index] && (
+                  <Box className="box1"
                     component={motion.div}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -186,7 +202,7 @@ const Services = () => {
                               textAlign: "center",
                               color: "#000032",
                             }}
-                            onClick={expandDescription}
+                            onClick={()=> expandDescription(index)}
                           >
                             Ver más
                           </Button>
@@ -195,8 +211,9 @@ const Services = () => {
                     </CardActions>
                   </Box>
                 )}
-                {!expand && (
+                {!expand[index] && (
                   <Box
+                    className=""
                     component={motion.div}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -253,7 +270,7 @@ const Services = () => {
                               textAlign: "center",
                               color: "#000032",
                             }}
-                            onClick={expandDescription}
+                            onClick={()=> expandDescription(index)}
                           >
                             Ver menos
                           </Button>

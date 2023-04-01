@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
-    <Container sx={{ pb: 2 }}>
+    <Container sx={{ pb: 1, pt:4 }}>
       <Grid container sx={{ pb: 4, alignItems: "center" }}>
         <Grid item xs={12} md={6} sx={{ mb: 2 }}>
           <Box sx={{ color: "white" }}>
@@ -19,9 +19,10 @@ const Banner = () => {
               variant="h3"
               sx={{ mb: 5, textAlign: "justify", fontWeight: "bold" }}
               component={motion.div}
-              initial={{ translateX: 100, opacity: 0 }}
+              initial={{ translateX: 90, opacity: 0 }}
               whileInView={{ translateX: 0, opacity: 1 }}
               transition={{ duration: 1 }}
+              exit={{translateX:0}}
             >
               Asesorías y Consultorías en Seguridad y Salud en el Trabajo y
               Medio Ambiente
@@ -40,7 +41,7 @@ const Banner = () => {
             <Box
               sx={{ display: "flex", justifyContent: "center" }}
               component={motion.div}
-              initial={{ translateX: -100, opacity: 0 }}
+              initial={{ translateX: -90, opacity: 0 }}
               whileInView={{ translateX: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
@@ -85,7 +86,7 @@ const Banner = () => {
             <motion.img
               src="images/logo-sst-colores-copia-min.png"
               alt="logo-ingeniero-asesor-SST"
-              width={300}
+              width={"300px"}
               style={{ my: "auto" }}
               whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
               transition={{ duration: 4, repeat: Infinity }}

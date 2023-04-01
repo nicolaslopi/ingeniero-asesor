@@ -104,9 +104,10 @@ const Contact = () => {
           fontWeight: "bold",
         }}
         component={motion.div}
-        initial={{translateX:100, opacity:0}}
+        initial={{translateX:90, opacity:0}}
         whileInView={{translateX:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Contacto
       </Typography>
@@ -119,9 +120,10 @@ const Contact = () => {
           fontWeight: "bold",
         }}
         component={motion.div}
-        initial={{translateY:100, opacity:0}}
+        initial={{translateY:90, opacity:0}}
         whileInView={{translateY:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       >
         Cotiza aquí tu servicio y trabajemos juntos
       </Typography>
@@ -134,9 +136,10 @@ const Contact = () => {
           my: 4,
         }}
         component={motion.div}
-        initial={{translateY:-100, opacity:0}}
+        initial={{translateY:-90, opacity:0}}
         whileInView={{translateY:0, opacity:1}}
         transition={{duration:1}}
+        exit={{translateX:0}}
       />
       <Card elevation={5} sx={{ minWidth: 120, p: 2 }} component={motion.div}
         initial={{opacity:0}}
