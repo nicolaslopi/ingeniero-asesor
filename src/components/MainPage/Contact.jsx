@@ -229,7 +229,7 @@ const Contact = () => {
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="tel:+573226174846"
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="tel:+573122377845"
                   target={"_blank"}>
                   <PhoneAndroidIcon sx={{ mr: 2 }} />
                   <span style={{ color: "#000032" }}>3122377845</span>
@@ -250,7 +250,7 @@ const Contact = () => {
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} component={ReactWhatsapp} number="57-322-617-4846" message="Hello World!!!">
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} component={ReactWhatsapp} number="57-312-237-7845" message="Hello World!!!">
                   <WhatsApp sx={{ mr: 2 }} />
                   <span style={{ color: "#000032" }}>3122377845</span>
                 </Button>
