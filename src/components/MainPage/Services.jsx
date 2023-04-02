@@ -57,7 +57,7 @@ const Services = () => {
       <Typography
         variant="h2"
         sx={{
-          textAlign: "center",
+          textAlign: "center", 
           color: "#000032",
           mb: 3,
           fontWeight: "bold",
