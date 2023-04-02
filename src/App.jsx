@@ -69,7 +69,7 @@ function App() {
                 variant="determinate"
                 color="warning"
                 value={progress}
-                sx={{ width: "40%", height: 10, backgroundColor: "#fff" }}
+                sx={{ width: {xs:"50%", md:"30%"}, height: 10, backgroundColor: "#fff" }}
               />
             </Grid>
           </Grid>
