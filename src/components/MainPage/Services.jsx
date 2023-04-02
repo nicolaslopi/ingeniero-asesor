@@ -33,7 +33,6 @@ import "swiper/css/effect-coverflow";
 import { Pagination, Navigation, EffectCoverflow } from "swiper";
 
 import { services } from "./servicesContans";
-import "./Services.css";
 import { padding } from "@mui/system";
 
 const Services = () => {
@@ -165,7 +164,7 @@ const Services = () => {
                 initial={{scale:0, opacity:0}} whileInView={{opacity:1, scale:1, transition:{delay:index-(index*0.9),duration:0.5}}}
               >
                 {expand[index] && (
-                  <Box className="box1"
+                  <Box
                     component={motion.div}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -176,7 +175,7 @@ const Services = () => {
                       <CardMedia sx={{ height: 210 }}>
                         <img
                           src={item.image}
-                          alt={`logo ${item.image}`}
+                          alt={`${item.title}`}
                           style={{
                             width: "100%",
                             height: "100%",
@@ -213,7 +212,6 @@ const Services = () => {
                 )}
                 {!expand[index] && (
                   <Box
-                    className=""
                     component={motion.div}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

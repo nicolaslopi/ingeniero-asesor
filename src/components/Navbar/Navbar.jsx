@@ -45,7 +45,7 @@ export default function Navbar() {
                   width={51}
                   height={55}
                   src="images/logo-sst-colores-copia-min.png"
-                  alt="logo-sst"
+                  alt="Logo Ingeniero Asesor SST"
                   loading="lazy"
                 />
               </Typography>

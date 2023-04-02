@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 
 const Footer = () => {
     return (
@@ -9,7 +9,7 @@ const Footer = () => {
                   width={51}
                   height={55}
                   src="images/logo-sst-colores-copia-min.png"
-                  alt="logo-sst-colores"
+                  alt="Logo Ingeniero Asesor SST"
                   loading="lazy"
             />
             </Typography>

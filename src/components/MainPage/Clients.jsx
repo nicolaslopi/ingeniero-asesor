@@ -1,21 +1,8 @@
 import {
-  Box,
-  Button,
   Card,
-  CardActions,
-  CardContent,
   Container,
   Grid,
   Typography,
-  Dialog,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
   Divider,
 } from "@mui/material";
 import {motion} from 'framer-motion';
@@ -23,55 +10,55 @@ import {motion} from 'framer-motion';
 const Clients = () => {
   const companies = [
     {
-      title: "Avicola",
+      title: "Avicola SST",
       src: "images/avicola.jpeg",
     },
     {
-      title: "Cantera San Miguel",
+      title: "Cantera San Miguel SST",
       src: "images/canteraSanMiguel.jpeg",
     },
     {
-      title: "Cantera San Miguel",
+      title: "Ferreteria SST",
       src: "images/ferreteria.jpeg",
     },
     {
-      title: "Cantera San Miguel",
+      title: "inmsas SST",
       src: "images/inmsas.jpeg",
     },
     {
-      title: "Cantera San Miguel",
+      title: "Provi SST",
       src: "images/provi.jpeg",
     },
     {
-      title: "Yumbogas SAS",
+      title: "Yumbogas SAS SST",
       src: "images/yumbogas-sas.jpeg",
     },
     {
-      title: "Cantera San Miguel",
+      title: "RefriSur SST",
       src: "images/refriSur.jpeg",
     },
     {
-      title: "Cantera San Miguel",
+      title: "S SST",
       src: "images/S.jpeg",
     },
     {
-      title: "Facmac",
+      title: "Facmac SST",
       src: "images/facmac.jpg",
     },
     {
-      title: "Cantera San Miguel",
+      title: "Redsalud SST",
       src: "images/redSalud.jpeg",
     },
     {
-      title: "Distribuidora GTO",
+      title: "Distribuidora GTO SST",
       src: "images/distribuidora-gto.jpeg",
     },
     {
-      title: "Universal de aires",
+      title: "Universal de aires SST",
       src: "images/universal-de-aires.jpeg",
     },
     {
-      title: "Naranjo SAS",
+      title: "Naranjo SAS SST",
       src: "images/Naranjo-sas.jpeg",
     },
   ];
@@ -135,7 +122,7 @@ const Clients = () => {
                   py: 0.5,
                 }}
               >
-                <img src={item.src} alt={item.title} width="100%" style={{objectFit:"fill"}} />
+                <img src={item.src} alt={`Logo ${item.title}`} width="100%" style={{objectFit:"fill"}} />
               </Typography>
             </Card>
           </Grid>

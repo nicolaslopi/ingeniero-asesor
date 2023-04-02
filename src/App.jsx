@@ -19,7 +19,7 @@ function App() {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress === 100) {
-            setSplash(false)
+          setSplash(false);
           return 0;
         }
         return oldProgress + 20;
@@ -37,26 +37,42 @@ function App() {
           sx={{
             height: "100vh",
             width: "100%",
-            backgroundColor: "#000032", display: "flex", alignItems:"center"  
+            backgroundColor: "#000032",
+            display: "flex",
+            alignItems: "center",
           }}
         >
-          <Grid container spacing={4} >
-            <Grid item xs={12} sx={{display: "flex", justifyContent: "center", alignItems:"center"}}>
+          <Grid container spacing={4}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <motion.img
                 src="images/logo-sst-colores-copia-min.png"
-                alt="logo-ingeniero-asesor-SST"
-                style={{ width: 300, height:350}}
-                animate={{scale:[1,1.1,1, 1.1, 1]}} transition={{duration:4, repeat:Infinity}}
+                alt="Logo Ingeniero Asesor SST"
+                style={{ width: 300, height: 350 }}
+                animate={{ scale: [1, 1.1, 1, 1.1, 1] }}
+                transition={{ duration: 4, repeat: Infinity }}
               />
             </Grid>
-            <Grid item xs={12} sx={{display:"flex", justifyContent:"center"}}>
-              <LinearProgress variant="determinate" color="warning" value={progress} sx={{width:"40%", height:10 ,backgroundColor:"#fff"}}/>
+            <Grid
+              item
+              xs={12}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <LinearProgress
+                variant="determinate"
+                color="warning"
+                value={progress}
+                sx={{ width: "40%", height: 10, backgroundColor: "#fff" }}
+              />
             </Grid>
           </Grid>
-          {/* <Box sx={{my: "10%", mx: "auto"}}>
-          </Box>
-          <Box sx={{ width: "50%", my: "30%", mx: "auto" }}>
-          </Box> */}
         </Box>
       )}
       {!splash && <Navbar></Navbar>}
@@ -67,10 +83,11 @@ function App() {
           initial={{ display: "none", opacity: 0 }}
           animate={{ opacity: 1, display: "block" }}
           transition={{ duration: 3 }}
-          exit={{display: "none", opacity: 0}}
+          exit={{ display: "none", opacity: 0 }}
         >
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="*" element={<div><p>404 | NOT FOUND</p></div>} />
           </Routes>
         </Box>
       )}

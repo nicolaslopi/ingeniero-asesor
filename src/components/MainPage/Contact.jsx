@@ -256,7 +256,7 @@ const Contact = () => {
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "red", fontSize: "16px", textTransform:"none" }}>
+                <Button sx={{ color: "red", fontSize: "16px", textTransform:"none" }} href={`https://www.google.com/maps/place/${encodeURIComponent("Cali, Valle Del Cauca, Colombia")}`} target={"_blank"}>
                   <LocationOnIcon sx={{ mr: 2 }} />
                   <span style={{ color: "#000032" }}>Cali, Valle del Cauca, Colombia.</span>
                 </Button>
@@ -280,58 +280,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
- {/* <Typography
-                variant="body"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  my: 2,
-                }}
-              >
-                <a
-                  style={{ textDecoration: "none", color: "black" }}
-                  href="https://web.facebook.com/profile.php?id=100090006045246"
-                  target={"_blank"}
-                >
-                  <Facebook sx={{ mx: 2, color: "#f99f00" }} />
-                  Asesorías
-                </a>
-              </Typography>
-              <Typography
-                variant="body"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  my: 2,
-                }}
-              >
-                <a
-                  style={{ textDecoration: "none", color: "#000032" }}
-                  href="https://www.instagram.com/ingenieroasesorsst/"
-                  target={"_blank"}
-                >
-                  <Instagram sx={{ mx: 2, color: "#f99f00" }} />
-                  Asesorías
-                </a>
-              </Typography>
-              <Typography
-                variant="body"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  my: 2,
-                }}
-              >
-                <a
-                  style={{ textDecoration: "none", color: "#000032" }}
-                  href="https://www.instagram.com/ingenieroasesorsst/"
-                  target={"_blank"}
-                >
-                  <WhatsApp sx={{ mx: 2, color: "#f99f00" }} />
-                  Asesorías
-                </a>
-              </Typography> */}

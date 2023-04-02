@@ -36,7 +36,7 @@ import { services } from "./servicesContans";
 const AboutUs = () => {
   return (
     <Container sx={{ py: 8,}}>
-        <Card elevation={7} sx={{backgroundColor:"",backgroundImage:"url('images/Sin-título-1-04.png')", py:4, px:8}}>
+        <Card elevation={7} sx={{backgroundColor:"", py:4, px:8}}>
         <Typography
         variant="h2"
         sx={{

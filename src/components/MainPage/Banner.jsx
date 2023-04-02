@@ -1,10 +1,8 @@
 import {
   Box,
   Button,
-  Card,
   Container,
   Grid,
-  IconButton,
   Typography,
 } from "@mui/material";
 import { motion } from "framer-motion";
@@ -24,20 +22,8 @@ const Banner = () => {
               transition={{ duration: 1 }}
               exit={{translateX:0}}
             >
-              Asesorías y Consultorías en Seguridad y Salud en el Trabajo y
-              Medio Ambiente
+              Asesorías y Consultorías en Seguridad y Salud en el Trabajo y Medio Ambiente
             </Typography>
-            {/* <Typography variant="h5" sx={{ my: 3, textAlign:"justify"  }}>
-              Ponemos a su disposición nuestra experiencia en asesoría y
-              consultoría ambiental, seguridad y salud en el trabajo, para el
-              cumplimiento de los requisitos legales y el diseño e
-              implementación de sistemas integrados de gestión, impulsando a las
-              empresas al logro de sus objetivos y metas demostrando conciencia
-              ambiental y cultura de seguridad y salud en el trabajo.
-              <br></br>
-              Somos un equipo de ingenieros especialistas en Seguridad y Salud en el Trabajo y Ambiente, con más
-              de 8 años de experiencia, asesorando y brindando soluciones a empresas de diferentes sectores económicos.
-            </Typography> */}
             <Box
               sx={{ display: "flex", justifyContent: "center" }}
               component={motion.div}
@@ -85,7 +71,7 @@ const Banner = () => {
           >
             <motion.img
               src="images/logo-sst-colores-copia-min.png"
-              alt="logo-ingeniero-asesor-SST"
+              alt="Logo Ingeniero Asesor SST"
               width={"300px"}
               style={{ my: "auto" }}
               whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}

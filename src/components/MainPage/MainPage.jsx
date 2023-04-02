@@ -5,13 +5,11 @@ import Services from "./Services";
 import Clients from "./Clients";
 import Contact from "./Contact";
 import AboutUs from "./AboutUs";
-import { useEffect } from "react";
-import { useState } from "react";
 
 const MainPage = () => {
     
     return (
-        <Box sx={{backgroundColor:''}}>
+        <Box sx={{backgroundColor:'', overflow:"hidden"}}>
             <Grid>
                 <Grid item xs={12} md={12}  id="#" sx={{backgroundColor:"#000032", height:{xs:"auto", md:"100vh"}}}>
                     <Banner/>
