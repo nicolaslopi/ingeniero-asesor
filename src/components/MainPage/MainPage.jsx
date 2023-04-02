@@ -11,7 +11,7 @@ const MainPage = () => {
     return (
         <Box sx={{backgroundColor:'', overflow:"hidden"}}>
             <Grid>
-                <Grid item xs={12} md={12}  id="#" sx={{backgroundColor:"#000032", height:{xs:"auto", md:"100vh"}}}>
+                <Grid item xs={12} md={12}  id="#" sx={{backgroundColor:"#000032", height:{xs:"auto", md:"85vh"}}}>
                     <Banner/>
                 </Grid>
                 <Grid item xs={12} md={12}  id="nosotros" sx={{backgroundColor:"#f99f00", height:{xs:"auto", sm:"auto", md:"auto", lg:"auto"}}}>

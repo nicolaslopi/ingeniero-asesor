@@ -3,6 +3,7 @@ import {
   Button,
   Container,
   Grid,
+  Hidden,
   Typography,
 } from "@mui/material";
 import { motion } from "framer-motion";
@@ -62,6 +63,7 @@ const Banner = () => {
           animate={{ translateX: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
+          <Hidden only={["xs", "sm"]}>
           <Box
             sx={{
               backgroundColor: "#000032",
@@ -78,6 +80,25 @@ const Banner = () => {
               transition={{ duration: 4, repeat: Infinity }}
             />
           </Box>
+          </Hidden>
+          <Hidden only={["md", "lg"]}>
+          <Box
+            sx={{
+              backgroundColor: "#000032",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <motion.img
+              src="images/logo-sst-colores-copia-min.png"
+              alt="Logo Ingeniero Asesor SST"
+              width={"200px"}
+              style={{ my: "auto" }}
+              whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            />
+          </Box>
+          </Hidden>
         </Grid>
       </Grid>
     </Container>

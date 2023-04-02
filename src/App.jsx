@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Box, LinearProgress, Grid } from "@mui/material";
+import { Box, LinearProgress, Grid, Hidden } from "@mui/material";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/MainPage/Footer";
 import { useState } from "react";
@@ -42,7 +42,7 @@ function App() {
             alignItems: "center",
           }}
         >
-          <Grid container spacing={4}>
+          <Grid container spacing={6}>
             <Grid
               item
               xs={12}
@@ -55,7 +55,7 @@ function App() {
               <motion.img
                 src="images/logo-sst-colores-copia-min.png"
                 alt="Logo Ingeniero Asesor SST"
-                style={{ width: 300, height: 350 }}
+                style={{ width: 200, height: 250 }}
                 animate={{ scale: [1, 1.1, 1, 1.1, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
               />
@@ -87,7 +87,6 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="*" element={<div><p>404 | NOT FOUND</p></div>} />
           </Routes>
         </Box>
       )}
