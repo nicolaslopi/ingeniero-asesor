@@ -99,7 +99,7 @@ const Clients = () => {
       <Divider
         sx={{
           backgroundColor: "#fff",
-          width: "40%",
+          width: "50%",
           height: 3,
           mx: "auto",
           my: 6,

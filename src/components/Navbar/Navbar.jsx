@@ -6,6 +6,8 @@ import {
   Toolbar,
   Typography,
   Container,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -76,7 +78,7 @@ export default function Navbar() {
                       fontSize: "18px",
                       fontWeight: 600,
                       "&:hover": {
-                        fontSize: "1.2rem",
+                        fontSize: "1.5rem",
                         color: "white",
                       },
                     }}
@@ -125,13 +127,27 @@ export default function Navbar() {
         anchor="right"
         open={open}
         onClose={() => setOpen(false)}
-        sx={{ display: { xs: "block", lg: "none" } }}
+        sx={{ display: { xs: "block", lg: "none" }, height:"250px" }}
       >
         <NavListDrawerResponsive
           onClick={() => setOpen(false)}
           navLinks={navLinks}
         />
       </Drawer>
+      {/* <Menu
+        id="basic-menu"
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        open={open}
+        onClose={()=> setOpen(false)}
+        aria-haspopup="true"  
+      >
+        <MenuItem onClick={()=> setOpen(false)}>Profile</MenuItem>
+        <MenuItem onClick={()=> setOpen(false)}>My account</MenuItem>
+        <MenuItem onClick={()=> setOpen(false)}>Logout</MenuItem>
+      </Menu> */}
     </>
   );
 }

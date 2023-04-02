@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
-    <Container sx={{ pb: 1, pt:4 }}>
+    <Container sx={{ pb: 1, pt:{xs:1, md:4} }}>
       <Grid container sx={{ pb: 4, alignItems: "center" }}>
         <Grid item xs={12} md={6} sx={{ mb: 2 }}>
           <Box sx={{ color: "white" }}>

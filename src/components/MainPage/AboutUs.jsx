@@ -36,7 +36,7 @@ import { services } from "./servicesContans";
 const AboutUs = () => {
   return (
     <Container sx={{ py: 8,}}>
-        <Card elevation={7} sx={{backgroundColor:"", py:4, px:8}}>
+        <Card elevation={7} sx={{backgroundColor:"", py:4, px:{xs:3, md:8}}}>
         <Typography
         variant="h2"
         sx={{
@@ -56,7 +56,7 @@ const AboutUs = () => {
       <Divider
         sx={{
           backgroundColor: "#f99f00",
-          width: "40%",
+          width: "50%",
           height: 3,
           mx: "auto",
           my: 4,
@@ -107,7 +107,7 @@ const AboutUs = () => {
         trabajo.
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "center" }} component={motion.div} initial={{translateX:-90, opacity:0}} whileInView={{translateX:0, opacity:1}} transition={{duration:1}} exit={{translateX:0}}>
-              <Button href="#servicios" variant="contained" sx={{fontSize: {xs: "18px", md:"20px"}, backgroundColor:'#f99f00', color:"#000032",borderColor:"#f99f00", "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>
+              <Button href="#servicios" variant="contained" sx={{width:{xs:"100%", md:"auto"}, fontSize: {xs: "18px", md:"20px"}, backgroundColor:"#f99f00", color:"#000032", borderColor:"#f99f00", borderRadius:50, "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>
                 Conoce nuestros servicios
               </Button>
             </Box>

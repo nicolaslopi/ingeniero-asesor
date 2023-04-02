@@ -1,4 +1,5 @@
 import {
+  Button,
     Divider,
     List,
     ListItem,
@@ -6,7 +7,7 @@ import {
     ListItemText,
   } from "@mui/material";
   import { Box } from "@mui/system";
-  import { Link } from "react-router-dom";
+  import { useState } from "react";
   
   export default function NavListDrawer({ onClick, navLinks }) {
     return (
@@ -14,12 +15,13 @@ import {
         <nav aria-label="main mailbox folders">
           <List>
             {navLinks.map((item) => (
-              <ListItem disablePadding key={item.title}>
-                <ListItemButton href={item.path} component="a" sx={{"&:hover": {backgroundColor:"#000032", color:"white"}}}>
+              <ListItem disablePadding key={item.title} sx={{"&:hover": {backgroundColor:"#f99f00", color:"#fff"}}}>
+                <ListItemButton href={item.path} component={Button} >
                   {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
                   <ListItemText primary={item.title} sx={{fontWeight:"", color:"#000032"}}/>
                 </ListItemButton>
-              </ListItem> 
+                <Divider/>
+              </ListItem>
             ))}
           </List>
         </nav>

@@ -105,7 +105,7 @@ const Services = () => {
       <Divider
         sx={{
           backgroundColor: "#000032",
-          width: "40%",
+          width: "50%",
           height: 3,
           mx: "auto",
           my: 2,
@@ -130,15 +130,16 @@ const Services = () => {
           }}
           navigation={true}
           spaceBetween={20}
-          slidesPerView={3}
           breakpoints={{
-            300: {
-              slidesPerView: 1,
-            },
             640: {
-              slidesPerView: 2,
+              slidesPerView: 1,
+              spaceBetween: 20,
             },
             768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
               slidesPerView: 3,
               spaceBetween: 20,
             },
@@ -219,7 +220,7 @@ const Services = () => {
                     exit={{ opacity: 0 }}
                   >
                     <CardContent
-                      sx={{ height: 210, overflow: "hidden", pt: 2 }}
+                      sx={{ height: 210, overflow: "hidden", pt: 2, pb:2 }}
                     >
                       <Typography gutterBottom variant="h6" component="div">
                         {item.title}
@@ -282,6 +283,38 @@ const Services = () => {
           ))}
         </Swiper>
       </Box>
+    </Container>
+  );
+};
+export default Services;
+{
+  /* <Container sx={{ p: 4 }}>
+<Typography
+  variant="h4"
+  sx={{ mb: 2, color: "#f99f00", textAlign: "center" }}
+>
+  {service.title}
+</Typography>
+<Typography sx={{ textAlign: "justify" }}>{service.about}</Typography>
+<Box>
+  <List>
+    {service.items.map((item, index) => (
+      <ListItem key={index}>
+        <ListItemIcon>
+          <SendIcon />
+        </ListItemIcon>
+        <ListItemText primary={item} />
+      </ListItem>
+    ))}
+  </List>
+</Box>
+<Box sx={{width:"90%", display:"flex", justifyContent:"center", alignSelf:"end", position:"fixed"}}>
+  <Button variant="contained" sx={{width:"100%", backgroundColor:"#000032"}}>Contactanos</Button>
+</Box>
+</Container> */
+}
+
+
       {/* <Grid container gap={1} justifyContent="space-around">
         {servicess.map((item) => (
           <Grid item xs={12} md={5} key={item.title}>
@@ -354,33 +387,3 @@ const Services = () => {
           </Button>
         </DialogActions>
       </Dialog> */}
-    </Container>
-  );
-};
-export default Services;
-{
-  /* <Container sx={{ p: 4 }}>
-<Typography
-  variant="h4"
-  sx={{ mb: 2, color: "#f99f00", textAlign: "center" }}
->
-  {service.title}
-</Typography>
-<Typography sx={{ textAlign: "justify" }}>{service.about}</Typography>
-<Box>
-  <List>
-    {service.items.map((item, index) => (
-      <ListItem key={index}>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary={item} />
-      </ListItem>
-    ))}
-  </List>
-</Box>
-<Box sx={{width:"90%", display:"flex", justifyContent:"center", alignSelf:"end", position:"fixed"}}>
-  <Button variant="contained" sx={{width:"100%", backgroundColor:"#000032"}}>Contactanos</Button>
-</Box>
-</Container> */
-}

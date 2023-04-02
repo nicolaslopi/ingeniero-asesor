@@ -14,10 +14,10 @@ const MainPage = () => {
                 <Grid item xs={12} md={12}  id="#" sx={{backgroundColor:"#000032", height:{xs:"auto", md:"100vh"}}}>
                     <Banner/>
                 </Grid>
-                <Grid item xs={12} md={12}  id="nosotros" sx={{backgroundColor:"#f99f00", height:{xs:"auto", md:"100vh"}}}>
+                <Grid item xs={12} md={12}  id="nosotros" sx={{backgroundColor:"#f99f00", height:{xs:"auto", sm:"auto", md:"auto", lg:"auto"}}}>
                     <AboutUs/>                    
                 </Grid>
-                <Grid item xs={12} md={12}  id="servicios" sx={{backgroundColor:"#fff", height:{xs:"auto", md:"100vh"}}}>
+                <Grid item xs={12} md={12}  id="servicios" sx={{backgroundColor:"#fff", height:{xs:"auto", sm:"auto", md:"auto", lg:"auto"}}}>
                     <Services/>                    
                 </Grid>
                 <Grid item xs={12} md={12}  id="clientes" sx={{backgroundColor:"#000032",  height:{xs:"auto", md:"100vh"}}}>

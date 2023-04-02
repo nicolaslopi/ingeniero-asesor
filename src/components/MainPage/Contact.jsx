@@ -130,7 +130,7 @@ const Contact = () => {
       <Divider
         sx={{
           backgroundColor: "#f99f00",
-          width: "40%",
+          width: "50%",
           height: 3,
           mx: "auto",
           my: 4,
@@ -219,7 +219,7 @@ const Contact = () => {
               </Grid>
             </Box>
           </Grid>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={5} sx={{py:1}}>
             <Box>
               <Box>
                 <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="mailto:ingenieroasesorsst@gmail.com"
