@@ -73,7 +73,7 @@ const AboutUs = () => {
           color: "#000032",
           mb: 2,
           fontWeight: "bold",
-          textAlign: "justify",
+          textAlign: "normal",
         }}
         component={motion.div}
         initial={{translateX:90, opacity:0}}
@@ -91,7 +91,7 @@ const AboutUs = () => {
           color: "#000032",
           mb: 6,
           fontWeight: "bold",
-          textAlign: "justify",
+          textAlign: "normal",
         }}
         component={motion.div}
         initial={{translateX:90, opacity:0}}

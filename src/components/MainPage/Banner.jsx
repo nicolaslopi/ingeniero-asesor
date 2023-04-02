@@ -16,7 +16,7 @@ const Banner = () => {
           <Box sx={{ color: "white" }}>
             <Typography
               variant="h3"
-              sx={{ mb: 5, textAlign: "justify", fontWeight: "bold" }}
+              sx={{ mb: 5, textAlign: {xs:"center", md:"justify"}, fontWeight: "bold" }}
               component={motion.div}
               initial={{ translateX: 90, opacity: 0 }}
               whileInView={{ translateX: 0, opacity: 1 }}

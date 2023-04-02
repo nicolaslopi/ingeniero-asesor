@@ -36,17 +36,10 @@ import { services } from "./servicesContans";
 import { padding } from "@mui/system";
 
 const Services = () => {
-  const [open, setOpen] = useState(false);
-  const [service, setService] = useState();
   const [expand, setExpand] = useState([]);
-  const [expandState, setExpandState] = useState(true);
+  const [indexItem, setIndexItem] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [imageState, setImageState] = useState(true);
-  const cantidadServicios = [services.length];
-  const openDrawer = (o, s) => {
-    setOpen(o);
-    setService(s);
-    console.log(`open:${o} service:${s.title}`);
-  };
   const handleClose = () => {
     //setOpen(false);
     setTimeout(() => {
@@ -54,19 +47,51 @@ const Services = () => {
     }, 300);
   };
   const expandDescription = (index) => {
-    expand[index] = !expand[index];
-    setExpand(expand) 
-    //cantidadServicios[index] = !cantidadServicios[index]
-    //setImageState(!imageState);
+    const found = expand.findIndex((element) => element === false);
+    console.log("Found es: " + found);
+    console.log("Index es: " + index);
+    if(indexItem === 0){
+      expand[index] = !expand[index];
+      if(index !== currentIndex) expand[currentIndex] = true;
+      setExpand(expand);
+      setIndexItem(1);
+      console.log("Entré al 1er if");
+    }
+    else if (indexItem === 1) {
+      expand[index] = !expand[index];
+      setExpand(expand);
+      expand.map((item, i) => {
+        if(i !== index){
+        expand[i] = true;
+        setExpand(expand);
+        }
+      });
+      console.log(expand)
+      setIndexItem(0);
+      console.log("Entré al 2do if");
+    }
+    setCurrentIndex(index)
+    console.log("IndexItem es: " + indexItem);
+    console.log("-----------------------------");
   };
-  
+  const closeDescription = (index) => {
+    const found = expand.findIndex((element) => element === false);
+    expand[index] = !expand[index];
+    if (found !== index) {
+      expand[found] = !expand[found];
+    }
+    setExpand(expand);
+    console.log("Actualmente indexItem es:" + indexItem);
+    console.log("Actualmente found es:" + indexItem);
+  };
+
   useEffect(() => {
-    services.map((item,index)=>{
-      expand[index] = true
-      setExpand(expand)
-    })
-  }, [])
-  
+    services.map((item, index) => {
+      expand[index] = true;
+      setExpand(expand);
+    });
+  }, []);
+
   return (
     <Container sx={{ py: 5, backgroundColor: "" }}>
       <Typography
@@ -78,10 +103,10 @@ const Services = () => {
           fontWeight: "bold",
         }}
         component={motion.div}
-        initial={{translateY:90, opacity:0}}
-        whileInView={{translateY:0, opacity:1}}
-        transition={{duration:1}}
-        exit={{translateX:0}}
+        initial={{ translateY: 90, opacity: 0 }}
+        whileInView={{ translateY: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        exit={{ translateX: 0 }}
       >
         Servicios
       </Typography>
@@ -94,10 +119,10 @@ const Services = () => {
           textAlign: "center",
         }}
         component={motion.div}
-        initial={{translateY:90, opacity:0}}
-        whileInView={{translateY:0, opacity:1}}
-        transition={{duration:1}}
-        exit={{translateX:0}}
+        initial={{ translateY: 90, opacity: 0 }}
+        whileInView={{ translateY: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        exit={{ translateX: 0 }}
       >
         Impulsamos la conciencia ambiental y la cultura de seguridad y salud en
         el trabajo
@@ -111,12 +136,12 @@ const Services = () => {
           my: 2,
         }}
         component={motion.div}
-        initial={{translateX:90, opacity:0}}
-        whileInView={{translateX:0, opacity:1}}
-        transition={{duration:1}}
-        exit={{translateX:0}}
+        initial={{ translateX: 90, opacity: 0 }}
+        whileInView={{ translateX: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        exit={{ translateX: 0 }}
       />
-      <Box sx={{ py: 2, backgroundColor: "white" }} >
+      <Box sx={{ py: 2, backgroundColor: "white" }}>
         <Swiper
           style={{
             backgroundColor: "white",
@@ -157,12 +182,17 @@ const Services = () => {
             >
               <Card
                 elevation={6}
-                sx={{ height: {xs:"auto", md:350} }}
+                sx={{ height: { xs: "auto", md: 350 } }}
                 component={motion.div}
                 whileHover={{
                   boxShadow: "3px 3px 2px 1px #000032",
                 }}
-                initial={{scale:0, opacity:0}} whileInView={{opacity:1, scale:1, transition:{delay:index-(index*0.9),duration:0.5}}}
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: { delay: index - index * 0.9, duration: 0.5 },
+                }}
               >
                 {expand[index] && (
                   <Box
@@ -185,9 +215,21 @@ const Services = () => {
                         />
                       </CardMedia>
                     )}
-
-                    <CardContent sx={{ height: 40, mt:2, overflow: "hidden", backgroundColor:""}}>
-                      <Typography gutterBottom variant="h6" component="div" sx={{textAlign:"center"}}>
+                    <Divider />
+                    <CardContent
+                      sx={{
+                        height: 40,
+                        mt: 1,
+                        overflow: "hidden",
+                        backgroundColor: "",
+                      }}
+                    >
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                        sx={{ textAlign: "center" }}
+                      >
                         {item.title}
                       </Typography>
                     </CardContent>
@@ -202,7 +244,7 @@ const Services = () => {
                               textAlign: "center",
                               color: "#000032",
                             }}
-                            onClick={()=> expandDescription(index)}
+                            onClick={() => expandDescription(index)}
                           >
                             Ver más
                           </Button>
@@ -220,7 +262,7 @@ const Services = () => {
                     exit={{ opacity: 0 }}
                   >
                     <CardContent
-                      sx={{ height: 210, overflow: "hidden", pt: 2, pb:2 }}
+                      sx={{ height: 210, overflow: "hidden", pt: 2, pb: 2 }}
                     >
                       <Typography gutterBottom variant="h6" component="div">
                         {item.title}
@@ -252,7 +294,11 @@ const Services = () => {
                               borderRadius: 50,
                               mx: "auto",
                               width: "90%",
-                              "&:hover": { backgroundColor: "#000032", border:2, color:"#fff",},
+                              "&:hover": {
+                                backgroundColor: "#000032",
+                                border: 2,
+                                color: "#fff",
+                              },
                             }}
                             onClick={handleClose}
                           >
@@ -269,7 +315,7 @@ const Services = () => {
                               textAlign: "center",
                               color: "#000032",
                             }}
-                            onClick={()=> expandDescription(index)}
+                            onClick={() => expandDescription(index)}
                           >
                             Ver menos
                           </Button>
@@ -314,8 +360,8 @@ export default Services;
 </Container> */
 }
 
-
-      {/* <Grid container gap={1} justifyContent="space-around">
+{
+  /* <Grid container gap={1} justifyContent="space-around">
         {servicess.map((item) => (
           <Grid item xs={12} md={5} key={item.title}>
             <Card elevation={5} sx={{ height: 350, p: 2 }}>
@@ -346,8 +392,10 @@ export default Services;
             </Card>
           </Grid>
         ))}
-      </Grid> */}
-      {/* <Dialog fullWidth={true} open={open} onClose={() => setOpen(false)}>
+      </Grid> */
+}
+{
+  /* <Dialog fullWidth={true} open={open} onClose={() => setOpen(false)}>
         <DialogTitle>
           <Typography
             variant="h4"
@@ -386,4 +434,5 @@ export default Services;
             Contactanos
           </Button>
         </DialogActions>
-      </Dialog> */}
+      </Dialog> */
+}
