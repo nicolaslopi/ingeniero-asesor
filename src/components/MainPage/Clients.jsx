@@ -112,7 +112,7 @@ const Clients = () => {
       />
       <Grid container gap={6} justifyContent="space-around">
         {companies.map((item,index) => (
-          <Grid item xs={3} md={1} sx={{display:"flex", alignItems: "center"}} component={motion.div} initial={{scale:0, opacity:0}} whileInView={{opacity:1, scale:1, rotate:360, transition:{delay:index-(index*0.9),duration:1}}}>
+          <Grid item xs={3} md={1} sx={{display:"flex", alignItems: "center"}} component={motion.div} initial={{scale:0, opacity:0}} whileInView={{opacity:1, scale:1, rotate:360, transition:{delay:index-(index*0.96),duration:0.8}}}>
             <Card elevation={5} sx={{ width: {xs:90, md:125} }}>
               <Typography
                 sx={{
