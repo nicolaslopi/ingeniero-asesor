@@ -255,7 +255,7 @@ const Contact = () => {
                 </Button>
               </Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} component={ReactWhatsapp} number="57-312-237-7845" message="Hello World!!!">
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} component={ReactWhatsapp} number="57-312-237-7845" message="Por favor deje su mensaje. En un momento será atendido.">
                   <WhatsApp sx={{ mr: 2 }} />
                   <span style={{ color: "#000032" }}>3122377845</span>
                 </Button>
