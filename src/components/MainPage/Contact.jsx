@@ -11,6 +11,7 @@ import {
   Typography,
   IconButton,
   Divider,
+  CircularProgress
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
@@ -37,6 +38,7 @@ const Contact = () => {
   });
   const { vertical, horizontal, open, variant, snackbarMessage } = snackbar;
   const form = useRef();
+  const [loading, setLoading] = useState(false)
   const handleClose = () => {
     setSnackbar({
       open: false,
@@ -57,12 +59,13 @@ const Contact = () => {
         snackbarMessage: "Por favor llene todos los campos",
       });
     } else {
+      setLoading(true);
       emailjs
         .sendForm(
-          "service_o8idcdc",
-          "template_fbtz4b9",
+          "service_42bxuqn",
+          "template_ev8ra84",
           form.current,
-          "zQUdA2RITc4jr1SZv"
+          "9RQCKSnJLrjTTyG_B"
         )
         .then(
           (result) => {
@@ -78,6 +81,7 @@ const Contact = () => {
               horizontal: "center",
               snackbarMessage: "Enviado con éxito",
             });
+            setLoading(false);
           },
           (error) => {
             console.log(error.text);
@@ -88,6 +92,7 @@ const Contact = () => {
               horizontal: "center",
               snackbarMessage: "Ha ocurrido un error",
             });
+            setLoading(false);
           }
         );
     }
@@ -130,7 +135,7 @@ const Contact = () => {
       <Divider
         sx={{
           backgroundColor: "#f99f00",
-          width: "50%",
+          width: "5 0%",
           height: 3,
           mx: "auto",
           my: 4,
@@ -212,8 +217,8 @@ const Contact = () => {
                         color: "#fff",
                       },
                     }}
-                  >
-                    Enviar
+                  > 
+                    {loading? <CircularProgress sx={{color: "#000032", "&:hover":{color:"#fff"}}}></CircularProgress> : "Enviar"}
                   </Button>
                 </Grid>
               </Grid>
@@ -222,10 +227,10 @@ const Contact = () => {
           <Grid item xs={12} md={5} sx={{py:1}}>
             <Box>
               <Box>
-                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="mailto:ingenieroasesorsst@gmail.com"
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="mailto:gerencia@ingeasesorsst.com"
                   target={"_blank"}>
                   <EmailIcon sx={{ mr: 2 }} />
-                  <span style={{ color: "#000032" }}>ingenieroasesorsst@gmail.com</span>
+                  <span style={{ color: "#000032" }}>gerencia@ingeasesorsst.com</span>
                 </Button>
               </Box>
               <Box>
