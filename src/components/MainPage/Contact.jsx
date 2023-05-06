@@ -62,10 +62,10 @@ const Contact = () => {
       setLoading(true);
       emailjs
         .sendForm(
-          "service_42bxuqn",
-          "template_ev8ra84",
+          "service_7x8c78c",
+          "template_jbimvjm",
           form.current,
-          "9RQCKSnJLrjTTyG_B"
+          "nRhO1dnTvaFnzsKfH"
         )
         .then(
           (result) => {
@@ -135,7 +135,7 @@ const Contact = () => {
       <Divider
         sx={{
           backgroundColor: "#f99f00",
-          width: "5 0%",
+          width: "50%",
           height: 3,
           mx: "auto",
           my: 4,
