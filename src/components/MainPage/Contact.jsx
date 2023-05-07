@@ -25,7 +25,7 @@ import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podría darme más información"
+  const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");

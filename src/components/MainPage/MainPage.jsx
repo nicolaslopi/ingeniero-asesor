@@ -10,7 +10,7 @@ import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import ReactWhatsapp from "react-whatsapp";
 
 const MainPage = () => {
-  const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podría darme más información"
+  const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
   return (
     <Box sx={{ backgroundColor: "", overflow: "hidden" }}>
       <Grid>
