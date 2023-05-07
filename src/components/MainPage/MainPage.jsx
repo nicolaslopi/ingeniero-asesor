@@ -10,6 +10,7 @@ import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import ReactWhatsapp from "react-whatsapp";
 
 const MainPage = () => {
+  const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podría darme más información"
   return (
     <Box sx={{ backgroundColor: "", overflow: "hidden" }}>
       <Grid>
@@ -73,7 +74,7 @@ const MainPage = () => {
       </Grid>
       <Box sx={{ position: "fixed", bottom: 20, right: 3 }}>
         <ButtonGroup orientation="vertical">
-          <IconButton size="medium" sx={{ color: "white", bgcolor: "green", mb:1, "&:hover":{color: "white", bgcolor: "green"} }} component={ReactWhatsapp} number="57-312-237-7845" message="Por favor deje su mensaje. En un momento será atendido.">
+          <IconButton size="medium" sx={{ color: "white", bgcolor: "green", mb:1, "&:hover":{color: "white", bgcolor: "green"} }} component={ReactWhatsapp} number="57-312-237-7845" message={wMessage}>
             <WhatsApp sx={{ fontSize: 40 }} />
           </IconButton>
           <IconButton size="medium" sx={{ color: "white", bgcolor: "#0063cc", "&:hover":{color: "white", bgcolor: "#0063cc"}}} href="tel:+573122377845" target={"_blank"}>
