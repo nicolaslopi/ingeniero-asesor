@@ -8,6 +8,8 @@ import AboutUs from "./AboutUs";
 import WhatsApp from "@mui/icons-material/WhatsApp";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import ReactWhatsapp from "react-whatsapp";
+import { services } from "./servicesContans";
+import { ServicesProvider } from "./ServicesContext";
 
 const MainPage = () => {
   const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
@@ -48,7 +50,9 @@ const MainPage = () => {
             height: { xs: "auto", sm: "auto", md: "auto", lg: "auto" },
           }}
         >
-          <Services />
+          <ServicesProvider>
+            <Services/>
+          </ServicesProvider>
         </Grid>
         <Grid
           item

@@ -21,8 +21,7 @@ import {
   Hidden,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import SendIcon from "@mui/icons-material/Send";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -31,11 +30,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import { Pagination, Navigation, EffectCoverflow } from "swiper";
-
-import { services } from "./servicesContans";
-import { padding } from "@mui/system";
+import { ServicesContext } from "./ServicesContext";
 
 const Services = () => {
+  const {services} = useContext(ServicesContext)
+  const [services_, setServices_] = useState([]);
   const [expand, setExpand] = useState([]);
   const [indexItem, setIndexItem] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -86,11 +85,12 @@ const Services = () => {
   };
 
   useEffect(() => {
+    console.log(services)
     services.map((item, index) => {
       expand[index] = true;
       setExpand(expand);
     });
-  }, []);
+  }, [services]);
 
   return (
     <Container sx={{ py: 5, backgroundColor: "" }}>
@@ -262,7 +262,7 @@ const Services = () => {
                     exit={{ opacity: 0 }}
                   >
                     <CardContent
-                      sx={{ height: 210, overflow: "hidden", pt: 2, pb: 2 }}
+                      sx={{ height: 210, overflowX: "hidden", pt: 2, pb: 2, }}
                     >
                       <Typography gutterBottom variant="h6" component="div">
                         {item.title}

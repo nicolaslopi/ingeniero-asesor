@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import MainPage from "./components/MainPage/MainPage";
 import { motion } from "framer-motion";
+import { ServicesProvider } from "./components/MainPage/ServicesContext";
 
 function App() {
   const [splash, setSplash] = useState(true);
@@ -74,7 +75,7 @@ function App() {
           </Grid>
         </Box>
       )}
-      {!splash && <Navbar></Navbar>}
+      {!splash && <ServicesProvider><Navbar></Navbar></ServicesProvider>}
       {!splash && (
         <Box
           sx={{ pt: 15, backgroundColor: "" }}
