@@ -25,11 +25,11 @@ import { servicesNav,changePosition} from "../MainPage/servicesContans";
 import { ServicesContext, data } from "../MainPage/ServicesContext";
 
 const navLinks = [
-  { title: "Inicio", path: "#" },
-  { title: "Nosotros", path: "#nosotros" },
-  { title: "Servicios", path: "#servicios" },
-  { title: "Clientes", path: "#clientes" },
-  { title: "Contacto", path: "#contacto" },
+  { id:"navButton0", title: "Inicio", path: "#" },
+  { id:"navButton1", title: "Nosotros", path: "#nosotros" },
+  { id:"navButton2", title: "Servicios", path: "#servicios" },
+  { id:"navButton3", title: "Clientes", path: "#clientes" },
+  { id:"navButton4", title: "Contacto", path: "#contacto" },
 ];
 
 export default function Navbar() {
@@ -45,6 +45,9 @@ export default function Navbar() {
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
+    const index = navLinks.indexOf(link => link.id === event.currentTarget.id);
+    console.log(index)
+    window.location.href = navLinks[index].path;
     if(event.currentTarget.id === "navButton2") setAnchorEl(event.currentTarget);
   };
 
@@ -114,7 +117,7 @@ export default function Navbar() {
                       color: "white",
                     },
                   }}
-                  href={item.path}
+                  
                 >
                   {item.title}
                 </Button>

@@ -81,7 +81,7 @@ const Banner = () => {
             />
           </Box>
           </Hidden>
-          <Hidden only={["md", "lg"]}>
+          <Hidden only={["md", "lg", "xl"]}>
           <Box
             sx={{
               backgroundColor: "#000032",
