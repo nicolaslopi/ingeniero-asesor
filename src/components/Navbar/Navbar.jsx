@@ -45,8 +45,6 @@ export default function Navbar() {
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
-    setServices([]);
-    setServices(data);
     if(event.currentTarget.id === "navButton2") setAnchorEl(event.currentTarget);
     console.log(event.currentTarget);
   };
