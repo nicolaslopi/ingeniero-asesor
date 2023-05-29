@@ -44,11 +44,14 @@ export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = (event) => {
-    if(event.currentTarget.id === "navButton2") setAnchorEl(event.currentTarget);
-    //const index = navLinks.findIndex(link => link.id === event.currentTarget.id);
-    //console.log(index)
-    //window.location.href = navLinks[index].path
+  const handleClick = (e) => {
+    if(e.currentTarget.name === "navButton2") {
+      setAnchorEl(e.currentTarget)
+    }
+    console.log(e.currentTarget.name)
+    const index = navLinks.findIndex(link => link.id === e.currentTarget.name);
+    console.log(index)
+    window.location.href = navLinks[index].path
   };
 
   const handleClickItem = () => {
@@ -103,11 +106,12 @@ export default function Navbar() {
               >
                 {navLinks.map((item,index)=>(
                <Button
+               name={"navButton"+index}
                   id={"navButton"+index}
                   aria-controls={open ? "basic-menu" : undefined}
                   aria-haspopup="true"
                   aria-expanded={open ? "true" : undefined}
-                  onClick={()=>{handleClick()}}
+                  onClick={handleClick}
                   sx={{
                     color: "#fff",
                     fontSize: "18px",
@@ -117,7 +121,6 @@ export default function Navbar() {
                       color: "white",
                     },
                   }}
-                  href={item.path}
                 >
                   {item.title}
                 </Button>

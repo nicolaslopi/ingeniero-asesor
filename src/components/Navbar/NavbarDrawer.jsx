@@ -5,11 +5,15 @@ import {
     ListItem,
     ListItemButton,
     ListItemText,
+    Box
   } from "@mui/material";
-  import { Box } from "@mui/system";
-  import { useState } from "react";
+  import { useContext, useState } from "react";
+import { ServicesContext } from "../MainPage/ServicesContext";
   
   export default function NavListDrawer({ onClick, navLinks }) {
+
+    const {services, setServices} = useContext(ServicesContext);
+
     return (
       <Box sx={{ width: 250 }} onClick={onClick}>
         <nav aria-label="main mailbox folders">
