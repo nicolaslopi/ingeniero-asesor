@@ -45,10 +45,10 @@ export default function Navbar() {
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
-    const index = navLinks.indexOf(link => link.id === event.currentTarget.id);
-    console.log(index)
-    window.location.href = navLinks[index].path;
     if(event.currentTarget.id === "navButton2") setAnchorEl(event.currentTarget);
+    const index = navLinks.findIndex(link => link.id === event.currentTarget.id);
+    console.log(index)
+    window.location.href = navLinks[index].path
   };
 
   const handleClickItem = () => {
