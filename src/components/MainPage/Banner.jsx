@@ -23,7 +23,7 @@ const Banner = () => {
               transition={{ duration: 1 }}
               exit={{translateX:0}}
             >
-              Asesorías y Consultorías en Seguridad y Salud en el Trabajo y Medio Ambiente
+              Asesorías y Consultorías en Seguridad y Salud en el Trabajo y Plan Estratégico de Seguridad Vial
             </Typography>
             <Box
               sx={{ display: "flex", justifyContent: "center" }}

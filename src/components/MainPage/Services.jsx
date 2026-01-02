@@ -124,8 +124,8 @@ const Services = () => {
         transition={{ duration: 1 }}
         exit={{ translateX: 0 }}
       >
-        Impulsamos la conciencia ambiental y la cultura de seguridad y salud en
-        el trabajo
+        Impulsamos la cultura de seguridad y salud en
+        el trabajo y plan estratégico de seguridad vial
       </Typography>
       <Divider
         sx={{

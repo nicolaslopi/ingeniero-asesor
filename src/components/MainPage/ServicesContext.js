@@ -23,7 +23,7 @@ export const data = [
         image: 'images/service4.jpeg'
     },
     {
-        title: 'AUDITORÍAS INTERNAS EN SST',
+        title: 'AUDITORÍAS INTERNAS EN SST y PESV',
         content: 'El cumplimiento de los requisitos del SG-SST, no sólo ayudará a prevenir accidentes laborales, sino que también evita que la organización tenga que hacer frente a multas por el incumplimiento en material legal sobre seguridad y salud en el trabajo.',
         image: 'images/service5.jpeg'
     },
@@ -32,31 +32,36 @@ export const data = [
         content: 'Evita sanciones y efectúa una adecuada investigación de accidentes de trabajo.',
         image: 'images/service6.jpeg'
     },
-    {
-        title: 'VENTA DE DOTACIÓN Y ELEMENTOS DE PROTECCIÓN PERSONAL',
-        content: 'Protege a tus trabajadores con E.P.Ps de calidad para que puedan dar su mejor rendimiento sin poner en riesgo su salud.',
-        image: 'images/venta-dotacion.jpeg'
-    },
+    // {
+    //     title: 'VENTA DE DOTACIÓN Y ELEMENTOS DE PROTECCIÓN PERSONAL',
+    //     content: 'Protege a tus trabajadores con E.P.Ps de calidad para que puedan dar su mejor rendimiento sin poner en riesgo su salud.',
+    //     image: 'images/venta-dotacion.jpeg'
+    // },
     {
         title: 'PLAN ESTRATÉGICO DE SEGURIDAD VIAL',
         content: 'PESV “Es una herramienta de gestión que contiene las acciones, mecanismos, estrategias y medidas de planificación, implementación, seguimiento y mejora que deben aportar las diferentes entidades, organizaciones o empresas del sector público o privado encaminadas a generar hábitos, comportamientos y conductas seguras en las vías para prevenir riesgos, reducir la accidentalidad vial y disminuir sus efectos nocivos”. resolución 20223040040595',
         image: 'images/pesv.jpeg'
     },
     {
-        title: 'GESTIÓN AMBIENTAL',
-        content: 'Un Sistema de Gestión Ambiental (SGA) es una herramienta que incluye diferentes procesos y prácticas para reducir el impacto ambiental de una empresa y desempeñar su actividad de forma respetuosa con el medio. Incluye tanto la gestión de residuos como la del agua, consumo energético, emisiones de CO2, etc. Implementación ISO 14001',
-        image: 'images/gestion-ambiental.jpeg'
+        title: 'MENTORÍA PARA PROFESIONALES EN SST',
+        content: 'Fortalece tus competencias técnicas y de liderazgo en Seguridad y Salud en el Trabajo. Recibe acompañamiento experto para la resolución de dudas en implementación, auditoría y gestión estratégica, permitiéndote destacar profesionalmente y asegurar el cumplimiento efectivo en cualquier organización.',
+        image: 'images/service7.jpeg'
     },
-    {
-        title: 'BATERÍA RIESGO PSICOSOCIAL',
-        content: 'Resolución 2764 de 2022. Batería Riesgo Psicosocial es una herramienta que le permite evaluar el riesgo intralaboral, extralaboral y el estrés al que se enfrenta su colaborador. La aplicación de este instrumento y el análisis de los resultados que realice un psicólogo ocupacional permitirán determinar el programa a seguir en su compañía.',
-        image: 'images/bateria-riesgo-psicosocial.jpeg'
-    },
-    {
-        title: 'DISEÑO E IMPLEMENTACIÓN DEL SISTEMA DE GESTIÓN DE CALIDAD ISO 9001',
-        content: 'Diseño e implementación del sistema de gestión de calidad ISO 9001',
-        image: 'images/iso9001.jpeg'
-    },
+    // {
+    //     title: 'GESTIÓN AMBIENTAL',
+    //     content: 'Un Sistema de Gestión Ambiental (SGA) es una herramienta que incluye diferentes procesos y prácticas para reducir el impacto ambiental de una empresa y desempeñar su actividad de forma respetuosa con el medio. Incluye tanto la gestión de residuos como la del agua, consumo energético, emisiones de CO2, etc. Implementación ISO 14001',
+    //     image: 'images/gestion-ambiental.jpeg'
+    // },
+    // {
+    //     title: 'BATERÍA RIESGO PSICOSOCIAL',
+    //     content: 'Resolución 2764 de 2022. Batería Riesgo Psicosocial es una herramienta que le permite evaluar el riesgo intralaboral, extralaboral y el estrés al que se enfrenta su colaborador. La aplicación de este instrumento y el análisis de los resultados que realice un psicólogo ocupacional permitirán determinar el programa a seguir en su compañía.',
+    //     image: 'images/bateria-riesgo-psicosocial.jpeg'
+    // },
+    // {
+    //     title: 'DISEÑO E IMPLEMENTACIÓN DEL SISTEMA DE GESTIÓN DE CALIDAD ISO 9001',
+    //     content: 'Diseño e implementación del sistema de gestión de calidad ISO 9001',
+    //     image: 'images/iso9001.jpeg'
+    // },
 ]
 
 export const ServicesProvider = ({ children }) => {

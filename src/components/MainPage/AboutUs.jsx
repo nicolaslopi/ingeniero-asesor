@@ -82,7 +82,7 @@ const AboutUs = () => {
         exit={{translateX:0}}
       >
         Somos un equipo de ingenieros especialistas en Seguridad y Salud en el
-        Trabajo y Ambiente, con más de 8 años de experiencia, asesorando y
+        Trabajo y Plan Estratégico de Seguridad Vial, con más de 10 años de experiencia, asesorando y
         brindando soluciones a empresas de diferentes sectores económicos.
       </Typography>
       <Typography
@@ -100,11 +100,11 @@ const AboutUs = () => {
         exit={{translateX:0}}
       >
         Ponemos a su disposición nuestra experiencia en asesoría y consultoría
-        en seguridad y salud en el trabajo, y medio ambiente, para el cumplimiento de los
+        en seguridad y salud en el trabajo, y plan estratégico de seguridad vial, para el cumplimiento de los
         requisitos legales, el diseño y la ejecución de sistemas integrados
         de gestión, impulsando a las empresas al logro de sus objetivos y metas
-        demostrando conciencia ambiental y cultura de seguridad y salud en el
-        trabajo.
+        demostrando cultura de seguridad y salud en el
+        trabajo, y plan estratégico de seguridad vial.
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "center" }} component={motion.div} initial={{translateX:-90, opacity:0}} whileInView={{translateX:0, opacity:1}} transition={{duration:1}} exit={{translateX:0}}>
               <Button href="#servicios" variant="contained" sx={{width:{xs:"100%", md:"auto"}, fontSize: {xs: "18px", md:"20px"}, backgroundColor:"#f99f00", color:"#000032", borderColor:"#f99f00", borderRadius:50, "&:hover":{backgroundColor:'#000032', color:"#f99f00",borderColor:"#f99f00"}}}>
