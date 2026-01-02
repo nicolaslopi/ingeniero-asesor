@@ -5,32 +5,32 @@ export const data = [
     {
         title: 'DISEÑO DE DOCUMENTOS DEL SG-SST',
         content: 'Según el Decreto 1072/15, todas las empresas deben tener diseñado el Sistema de Gestión de Seguridad y Salud en el Trabajo, evita sanciones.',
-        image: 'images/service1.jpeg'
+        image: 'images/servicio1.jpeg'
     },
     {
         title: 'IMPLEMENTACIÓN DEL SG-SST',
         content: 'Implementación de seguridad y salud en el trabajo le ayudará a garantizar que su empresa cumple con todos los estándares legales, así como con los estándares de seguridad y salud. Esto significa que sus empleados estarán seguros y protegidos, y su empresa no tendrá que enfrentar posibles sanciones o multas por incumplimiento de la legislación.',
-        image: 'images/service2.jpeg'
+        image: 'images/servicio2.jpeg'
     },
     {
         title: 'INSPECCIONES DE SEGURIDAD',
         content: 'Al realizar las inspecciones de seguridad en su Negocio,se pueden identificar y analizar todos los peligros de accidente, de enfermedades profesionales, los malos procedimientos que el trabajador puede hacer, las posibles condiciones peligrosas en los puestos de trabajo  para después corregirlos.',
-        image: 'images/service3.jpeg'
+        image: 'images/servicio3.jpeg'
     },
     {
         title: 'CAPACITACIONES EN SST',
         content: 'En todo Negocio, la capacitación es la base para prevenir accidentes y enfermedades. De esta forma, los colaboradores conocen los pasos a seguir para garantizar su seguridad y la de los demás.',
-        image: 'images/service4.jpeg'
+        image: 'images/servicio4.jpeg'
     },
     {
         title: 'AUDITORÍAS INTERNAS EN SST y PESV',
         content: 'El cumplimiento de los requisitos del SG-SST, no sólo ayudará a prevenir accidentes laborales, sino que también evita que la organización tenga que hacer frente a multas por el incumplimiento en material legal sobre seguridad y salud en el trabajo.',
-        image: 'images/service5.jpeg'
+        image: 'images/servicio5.jpeg'
     },
     {
         title: 'INVESTIGACIÓN DE ACCIDENTES DE TRABAJO',
         content: 'Evita sanciones y efectúa una adecuada investigación de accidentes de trabajo.',
-        image: 'images/service6.jpeg'
+        image: 'images/servicio6.jpeg'
     },
     // {
     //     title: 'VENTA DE DOTACIÓN Y ELEMENTOS DE PROTECCIÓN PERSONAL',
@@ -40,12 +40,12 @@ export const data = [
     {
         title: 'PLAN ESTRATÉGICO DE SEGURIDAD VIAL',
         content: 'PESV “Es una herramienta de gestión que contiene las acciones, mecanismos, estrategias y medidas de planificación, implementación, seguimiento y mejora que deben aportar las diferentes entidades, organizaciones o empresas del sector público o privado encaminadas a generar hábitos, comportamientos y conductas seguras en las vías para prevenir riesgos, reducir la accidentalidad vial y disminuir sus efectos nocivos”. resolución 20223040040595',
-        image: 'images/pesv.jpeg'
+        image: 'images/plan-estrategico-sv.jpeg'
     },
     {
         title: 'MENTORÍA PARA PROFESIONALES EN SST',
         content: 'Fortalece tus competencias técnicas y de liderazgo en Seguridad y Salud en el Trabajo. Recibe acompañamiento experto para la resolución de dudas en implementación, auditoría y gestión estratégica, permitiéndote destacar profesionalmente y asegurar el cumplimiento efectivo en cualquier organización.',
-        image: 'images/service7.jpeg'
+        image: 'images/servicio7.jpeg'
     },
     // {
     //     title: 'GESTIÓN AMBIENTAL',

@@ -99,7 +99,7 @@ const AboutUs = () => {
         transition={{duration:1}}
         exit={{translateX:0}}
       >
-        Ponemos a su disposición nuestra experiencia en asesoría y consultoría
+        Ponemos a su disposición nuestra experiencia en asesoría, consultoría y mentoría
         en seguridad y salud en el trabajo, y plan estratégico de seguridad vial, para el cumplimiento de los
         requisitos legales, el diseño y la ejecución de sistemas integrados
         de gestión, impulsando a las empresas al logro de sus objetivos y metas

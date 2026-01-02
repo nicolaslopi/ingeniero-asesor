@@ -78,10 +78,10 @@ const MainPage = () => {
       </Grid>
       <Box sx={{ position: "fixed", bottom: 20, right: 3 }}>
         <ButtonGroup orientation="vertical">
-          <IconButton size="medium" sx={{ color: "white", bgcolor: "green", mb:1, "&:hover":{color: "white", bgcolor: "green"} }} component={ReactWhatsapp} number="57-312-237-7845" message={wMessage}>
+          <IconButton size="medium" sx={{ color: "white", bgcolor: "green", mb:1, "&:hover":{color: "white", bgcolor: "green"} }} component={ReactWhatsapp} number="57-310-640-9960" message={wMessage}>
             <WhatsApp sx={{ fontSize: 40 }} />
           </IconButton>
-          <IconButton size="medium" sx={{ color: "white", bgcolor: "#0063cc", "&:hover":{color: "white", bgcolor: "#0063cc"}}} href="tel:+573122377845" target={"_blank"}>
+          <IconButton size="medium" sx={{ color: "white", bgcolor: "#0063cc", "&:hover":{color: "white", bgcolor: "#0063cc"}}} href="tel:+573106409960" target={"_blank"}>
             <PhoneAndroidIcon sx={{ fontSize: 40 }} />
           </IconButton>
         </ButtonGroup>
