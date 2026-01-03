@@ -61,6 +61,22 @@ const Clients = () => {
       title: "Naranjo SAS SST",
       src: "images/Naranjo-sas.jpeg",
     },
+    {
+      title: "Villa Roma SAS",
+      src: "images/villa-roma.jpeg",
+    },
+    {
+      title: "Dolce Bocatto",
+      src: "images/dolce-bocatto.jpeg",
+    },
+    {
+      title: "Porcinal",
+      src: "images/porcinal.jpeg",
+    },
+    {
+      title: "Sabor Molido",
+      src: "images/sabor-molido.jpeg",
+    },
   ];
   return (
     <Container sx={{ pt: 8, pb:{xs:2, md:0} }}>

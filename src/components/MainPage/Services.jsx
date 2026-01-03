@@ -271,7 +271,7 @@ const Services = () => {
                         gutterBottom
                         variant="body2"
                         color="text.secondary"
-                        sx={{ textAlign: "justify" }}
+                        sx={{ textAlign: "justify", whiteSpace:'pre-line'}}
                       >
                         {item.content}
                       </Typography>

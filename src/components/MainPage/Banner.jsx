@@ -23,7 +23,8 @@ const Banner = () => {
               transition={{ duration: 1 }}
               exit={{translateX:0}}
             >
-              Asesorías, Consultorías y Mentorías en Seguridad y Salud en el Trabajo y Plan Estratégico de Seguridad Vial
+              {/* Asesorías, Consultorías y Mentorías en Seguridad y Salud en el Trabajo y Plan Estratégico de Seguridad Vial */}
+              Evite sanciones y proteja a su equipo: Soluciones en SST y PESV para Pymes en Colombia
             </Typography>
             <Box
               sx={{ display: "flex", justifyContent: "center" }}

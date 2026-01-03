@@ -47,6 +47,16 @@ export const data = [
         content: 'Fortalece tus competencias técnicas y de liderazgo en Seguridad y Salud en el Trabajo. Recibe acompañamiento experto para la resolución de dudas en implementación, auditoría y gestión estratégica, permitiéndote destacar profesionalmente y asegurar el cumplimiento efectivo en cualquier organización.',
         image: 'images/servicio7.jpeg'
     },
+    {
+        title: 'AUTOEVALUACION DE ESTANDARES MINIMOS ANTE MINTRABAJO',
+        content:`Nuestro Servicio Incluye:\n
+        Auditoría Express de Evidencias: No solo subimos números; verificamos que tengas el soporte documental para sustentar cada estándar calificado.\n
+        Cargue en Plataforma MinTrabajo: Gestión completa del registro en el portal oficial, asegurando que la información sea recibida sin errores técnicos.\n
+        Plan de Mejora Inmediato: Si tu puntaje es inferior al 100%, entregamos la hoja de ruta legal requerida para alcanzar el cumplimiento total.\n
+        Certificado de Cumplimiento: Entrega del soporte de radicación oficial para tu archivo de gestión y para presentar a tus clientes o ARL.\n
+        `,
+        image: 'images/registro_esmin.jpeg'
+    },
     // {
     //     title: 'GESTIÓN AMBIENTAL',
     //     content: 'Un Sistema de Gestión Ambiental (SGA) es una herramienta que incluye diferentes procesos y prácticas para reducir el impacto ambiental de una empresa y desempeñar su actividad de forma respetuosa con el medio. Incluye tanto la gestión de residuos como la del agua, consumo energético, emisiones de CO2, etc. Implementación ISO 14001',
