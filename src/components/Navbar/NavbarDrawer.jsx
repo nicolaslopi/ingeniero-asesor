@@ -5,7 +5,8 @@ import {
     ListItem,
     ListItemButton,
     ListItemText,
-    Box
+    Box,
+    Typography
   } from "@mui/material";
   import { useContext, useState } from "react";
 import { ServicesContext } from "../MainPage/ServicesContext";
@@ -23,6 +24,11 @@ import { ServicesContext } from "../MainPage/ServicesContext";
                 <ListItemButton href={item.path} component={Button} >
                   {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
                   <ListItemText primary={item.title} sx={{fontWeight:"", color:"#000032"}}/>
+                  {item.path === '#tienda-virtual' && 
+                    <span style={{borderRadius:50, background:'red', paddingInline:4}}>
+                      <Typography fontSize={{fontSize:12, fontWeight:'bold', color:'white'}}>Nuevo</Typography>
+                    </span>
+                  }
                 </ListItemButton>
                 <Divider/>
               </ListItem>

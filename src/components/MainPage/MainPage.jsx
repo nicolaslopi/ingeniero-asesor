@@ -5,14 +5,47 @@ import Services from "./Services";
 import Clients from "./Clients";
 import Contact from "./Contact";
 import AboutUs from "./AboutUs";
+import News from "./News";
 import WhatsApp from "@mui/icons-material/WhatsApp";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import ReactWhatsapp from "react-whatsapp";
 import { services } from "./servicesContans";
 import { ServicesProvider } from "./ServicesContext";
+import DigitalProducts from "./DigitalProducts";
 
 const MainPage = () => {
   const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
+
+  // const handleWhatsappConversion = () => {
+  //   if (window.gtag) {
+  //     window.gtag('event', 'conversion', {
+  //       'send_to': 'AW-11168568075/6cgwCJi9554YEIumy80p'
+  //     });
+  //   }
+  // }  
+  function gtag_report_conversion(url) {
+    // 1. Avisar a Google Tag Manager para GA4
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'click_whatsapp_manual' // Este nombre coincide con tu activador en GTM
+    });
+  
+    // 2. Código original de Google Ads (AW)
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.open(url, '_blank');
+      }
+    };
+    
+    window.gtag('event', 'conversion', {
+        'send_to': 'AW-11168568075/6cgwCJi9554YEIumy80p',
+        'event_callback': callback
+    });
+    
+    return false;
+  }
+
+
   return (
     <Box sx={{ backgroundColor: "", overflow: "hidden" }}>
       <Grid>
@@ -58,6 +91,30 @@ const MainPage = () => {
           item
           xs={12}
           md={12}
+          id="tienda-virtual"
+          sx={{
+            backgroundColor: "#000032",
+            height: { xs: "auto", md: "100vh" },
+          }}
+        >
+          <DigitalProducts/>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={12}
+          id="noticias"
+          sx={{
+            backgroundColor: "#fff",
+            height: { xs: "auto", md: "100vh" },
+          }}
+        >
+          <News/>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={12}
           id="clientes"
           sx={{
             backgroundColor: "#000032",
@@ -78,7 +135,10 @@ const MainPage = () => {
       </Grid>
       <Box sx={{ position: "fixed", bottom: 20, right: 3 }}>
         <ButtonGroup orientation="vertical">
-          <IconButton size="medium" sx={{ color: "white", bgcolor: "green", mb:1, "&:hover":{color: "white", bgcolor: "green"} }} component={ReactWhatsapp} number="57-310-640-9960" message={wMessage}>
+          <IconButton 
+            size="medium" sx={{ color: "white", bgcolor: "green", mb:1, "&:hover":{color: "white", bgcolor: "green"} }}
+            onClick={() => gtag_report_conversion(`https://wa.me/573106409960?text=${encodeURIComponent(wMessage)}`)}
+          >
             <WhatsApp sx={{ fontSize: 40 }} />
           </IconButton>
           <IconButton size="medium" sx={{ color: "white", bgcolor: "#0063cc", "&:hover":{color: "white", bgcolor: "#0063cc"}}} href="tel:+573106409960" target={"_blank"}>

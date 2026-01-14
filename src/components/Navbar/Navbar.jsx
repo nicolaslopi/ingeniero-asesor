@@ -28,8 +28,10 @@ const navLinks = [
   { id:"navButton0", title: "Inicio", path: "#" },
   { id:"navButton1", title: "Nosotros", path: "#nosotros" },
   { id:"navButton2", title: "Servicios", path: "#servicios" },
-  { id:"navButton3", title: "Clientes", path: "#clientes" },
-  { id:"navButton4", title: "Contacto", path: "#contacto" },
+  { id:"navButton3", title: "Tienda Virtual", path: "#tienda-virtual" },
+  { id:"navButton4", title: "Noticias", path: "#noticias" },
+  { id:"navButton5", title: "Clientes", path: "#clientes" },
+  { id:"navButton6", title: "Contacto", path: "#contacto" },
 ];
 
 export default function Navbar() {
@@ -105,26 +107,33 @@ export default function Navbar() {
                 }}
               >
                 {navLinks.map((item,index)=>(
-               <Button
-               name={"navButton"+index}
-                  id={"navButton"+index}
-                  aria-controls={open ? "basic-menu" : undefined}
-                  aria-haspopup="true"
-                  aria-expanded={open ? "true" : undefined}
-                  onClick={handleClick}
-                  sx={{
-                    color: "#fff",
-                    fontSize: "18px",
-                    fontWeight: 600,
-                    "&:hover": {
-                      fontSize: "1.5rem",
-                      color: "white",
-                    },
-                  }}
-                >
-                  {item.title}
-                </Button>
-                  ))}
+                  <Button
+                      name={"navButton"+index}
+                      id={"navButton"+index}
+                      aria-controls={open ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? "true" : undefined}
+                      onClick={handleClick}
+                      sx={{
+                        color: "#fff",
+                        fontSize: "18px",
+                        fontWeight: 600,
+                        textTransform: 'none',
+                        "&:hover": {
+                          fontSize: "1.5rem",
+                          color: "white",
+                        },
+                        position:'relative'
+                      }}
+                    >
+                      {item.path === '#tienda-virtual' && 
+                        <span style={{position:'absolute', top:-8, right:-2, borderRadius:50, background:'red', paddingInline:4}}>
+                          <Typography fontSize={{fontSize:12, fontWeight:'bold'}}>Nuevo</Typography>
+                        </span>
+                      }
+                      {item.title}
+                    </Button>
+                ))}
                 <Menu
                   id="basic-menu"
                   anchorEl={anchorEl}
