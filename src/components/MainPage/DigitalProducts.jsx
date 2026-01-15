@@ -19,9 +19,6 @@ const DigitalProducts = () => {
             title:'Software Planes de Trabajo SST y PESV',
             message:'COMPRAR LICENCIA SOFTWARE PLANES DE TRABAJO SST y PESV - $30.000 mensual o $390.000 anual.'
         },
-        // {
-        //     video: "noticia_autoevaluacion_estandares_minimos.mp4"
-        // }
     ]
 
     return (
@@ -87,7 +84,8 @@ const DigitalProducts = () => {
                               objectFit: 'contain',
                               width: '100%',
                               height: { xs: '300px', md: "350px", lg:'400px' },
-                            }
+                            },
+                            mb:{xs:4,md:8}
                           }}
                         component={motion.div}
                         // whileHover={{
@@ -100,7 +98,7 @@ const DigitalProducts = () => {
                             // transition: { delay: index - index * 0.9, duration: 0.5 },
                         }}
                     >
-                        <video controls poster={`images/${item.poster}`} width="100%" height="100%">
+                        <video controls width="100%" height="100%">
                             <source src={`videos/${item.video}`} type="video/mp4" width={'100%'}/>
                         </video>
                         <Grid container flexDirection={'column'}>

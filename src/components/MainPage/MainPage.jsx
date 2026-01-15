@@ -12,6 +12,7 @@ import ReactWhatsapp from "react-whatsapp";
 import { services } from "./servicesContans";
 import { ServicesProvider } from "./ServicesContext";
 import DigitalProducts from "./DigitalProducts";
+import FreeResources from "./FreeResources";
 
 const MainPage = () => {
   const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
@@ -94,10 +95,24 @@ const MainPage = () => {
           id="tienda-virtual"
           sx={{
             backgroundColor: "#000032",
-            height: { xs: "auto", md: "100vh" },
+            height: { xs: "auto", md: "auto" },
+            pb:10
           }}
         >
           <DigitalProducts/>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={12}
+          id="recursos"
+          sx={{
+            backgroundColor: "#f99f00",
+            minHeight: { xs: "auto", md: "529px" },
+            pb:10
+          }}
+        >
+          <FreeResources/>
         </Grid>
         <Grid
           item

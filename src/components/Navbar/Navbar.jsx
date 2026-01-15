@@ -29,9 +29,10 @@ const navLinks = [
   { id:"navButton1", title: "Nosotros", path: "#nosotros" },
   { id:"navButton2", title: "Servicios", path: "#servicios" },
   { id:"navButton3", title: "Tienda Virtual", path: "#tienda-virtual" },
-  { id:"navButton4", title: "Noticias", path: "#noticias" },
-  { id:"navButton5", title: "Clientes", path: "#clientes" },
-  { id:"navButton6", title: "Contacto", path: "#contacto" },
+  { id:"navButton4", title: "Recursos", path: "#recursos" },
+  { id:"navButton5", title: "Noticias", path: "#noticias" },
+  { id:"navButton6", title: "Clientes", path: "#clientes" },
+  { id:"navButton7", title: "Contacto", path: "#contacto" },
 ];
 
 export default function Navbar() {
