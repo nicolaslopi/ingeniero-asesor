@@ -13,6 +13,7 @@ import { services } from "./servicesContans";
 import { ServicesProvider } from "./ServicesContext";
 import DigitalProducts from "./DigitalProducts";
 import FreeResources from "./FreeResources";
+import Quotes from "./Quotes";
 
 const MainPage = () => {
   const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
@@ -87,6 +88,19 @@ const MainPage = () => {
           <ServicesProvider>
             <Services/>
           </ServicesProvider>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={12}
+          id="cotizaciones"
+          sx={{
+            backgroundColor: "#d2d2d2",
+            minHeight: { xs: "auto", md: "529px" },
+            pb:10
+          }}
+        >
+          <Quotes/>
         </Grid>
         <Grid
           item
