@@ -1,4 +1,4 @@
-import * as React from 'react';  
+import * as React from "react";
 import {
   Alert,
   Box,
@@ -9,78 +9,96 @@ import {
   Snackbar,
   TextField,
   Typography,
+  IconButton,
+  Divider,
+  CircularProgress, Tooltip
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import Facebook from "@mui/icons-material/Facebook";
+import Instagram from "@mui/icons-material/Instagram";
+import WhatsApp from "@mui/icons-material/WhatsApp";
+import LinkedIn from "@mui/icons-material/LinkedIn";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ReactWhatsapp from "react-whatsapp";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { Tiktok } from "../../icons/Tiktok";
+import { Linktree } from "../../icons/Linktree";
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [snackbar, setSnackbar] = useState({
     open: false,
     variant: "success",
     vertical: "top",
     horizontal: "center",
-    snackbarMessage: "Enviado con éxito"
+    snackbarMessage: "Enviado con éxito",
   });
   const { vertical, horizontal, open, variant, snackbarMessage } = snackbar;
   const form = useRef();
+  const [loading, setLoading] = useState(false)
   const handleClose = () => {
     setSnackbar({
       open: false,
       variant: "",
       vertical: "top",
       horizontal: "center",
-      snackbarMessage: ""})
-  }
+      snackbarMessage: "",
+    });
+  };
   const sendEmail = (e) => {
     e.preventDefault();
-    if(name == '' || email == '' || phone == '' || message == ''){
+    if (name == "" || email == "" || phone == "" || message == "") {
       setSnackbar({
         open: true,
         variant: "error",
         vertical: "top",
         horizontal: "center",
-        snackbarMessage: "Por favor llene todos los campos"
-      })
-    }else{
+        snackbarMessage: "Por favor llene todos los campos",
+      });
+    } else {
+      setLoading(true);
       emailjs
-      .sendForm(
-        "service_o8idcdc",
-        "template_fbtz4b9",
-        form.current,
-        "zQUdA2RITc4jr1SZv"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // setName('')
-          // setEmail('')
-          // setPhone('')
-          // setMessage('')
-          setSnackbar({
-            open: true,
-            variant: "success",
-            vertical: "top",
-            horizontal: "center",
-            snackbarMessage: "Enviado con éxito"
-          })
-        },
-        (error) => {
-          console.log(error.text);
-          setSnackbar({
-            open: true,
-            variant: "error",
-            vertical: "top",
-            horizontal: "center",
-            snackbarMessage: "Ha ocurrido un error"
-          })
-        }
-      );
+        .sendForm(
+          "service_7x8c78c",
+          "template_jbimvjm",
+          form.current,
+          "nRhO1dnTvaFnzsKfH"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            // setName('')
+            // setEmail('')
+            // setPhone('')
+            // setMessage('')
+            setSnackbar({
+              open: true,
+              variant: "success",
+              vertical: "top",
+              horizontal: "center",
+              snackbarMessage: "Enviado con éxito",
+            });
+            setLoading(false);
+          },
+          (error) => {
+            console.log(error.text);
+            setSnackbar({
+              open: true,
+              variant: "error",
+              vertical: "top",
+              horizontal: "center",
+              snackbarMessage: "Ha ocurrido un error",
+            });
+            setLoading(false);
+          }
+        );
     }
   };
 
@@ -94,8 +112,13 @@ const Contact = () => {
           mb: 4,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateX:90, opacity:0}}
+        whileInView={{translateX:0, opacity:1}}
+        transition={{duration:1}}
+        exit={{translateX:0}}
       >
-        Contactanos
+        Contacto
       </Typography>
       <Typography
         variant="h4"
@@ -105,10 +128,32 @@ const Contact = () => {
           mb: 4,
           fontWeight: "bold",
         }}
+        component={motion.div}
+        initial={{translateY:90, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
+        exit={{translateX:0}}
       >
-        Trabajemos juntos
+        Cotiza aquí tu servicio y trabajemos juntos
       </Typography>
-      <Card elevation={5} sx={{ minWidth: 120, p: 2 }}>
+      <Divider
+        sx={{
+          backgroundColor: "#f99f00",
+          width: "50%",
+          height: 3,
+          mx: "auto",
+          my: 4,
+        }}
+        component={motion.div}
+        initial={{translateY:-90, opacity:0}}
+        whileInView={{translateY:0, opacity:1}}
+        transition={{duration:1}}
+        exit={{translateX:0}}
+      />
+      <Card elevation={5} sx={{ minWidth: 120, p: 2 }} component={motion.div}
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
+        transition={{duration:1}}>
         <Grid container justifyContent="space-around">
           <Grid item xs={12} md={5}>
             <Box component="form" ref={form} onSubmit={sendEmail}>
@@ -171,47 +216,89 @@ const Contact = () => {
                       backgroundColor: "#f99f00",
                       color: "#000032",
                       fontSize: "20px",
-                      "&:hover":{
+                      "&:hover": {
                         backgroundColor: "#000032",
                         color: "#fff",
-                      }
+                      },
                     }}
-                  >
-                    Enviar
+                  > 
+                    {loading? <CircularProgress sx={{color: "#000032", "&:hover":{color:"#fff"}}}></CircularProgress> : "Enviar"}
                   </Button>
                 </Grid>
               </Grid>
             </Box>
           </Grid>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={5} sx={{py:1}}>
             <Box>
-              <Typography
-                variant="body"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  my: 2,
-                }}
-              >
-                <EmailIcon sx={{ mx: 2 }}></EmailIcon>{" "}
-                <a href="mailto:ingenieroasesorsst@gmail.com">
-                  ingenieroasesorsst@gmail.com
-                </a>
-              </Typography>
-              <Typography
-                variant="body"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  my: 2,
-                }}
-              >
-                <PhoneAndroidIcon sx={{ mx: 2 }}></PhoneAndroidIcon><a href="tel:+573226174846">
-                3122377845
-                </a>
-              </Typography>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="mailto:gerencia@ingeasesorsst.com"
+                  target={"_blank"}>
+                  <EmailIcon sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>gerencia@ingeasesorsst.com</span>
+                </Button>
+              </Box>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="tel:+573106409960"
+                  target={"_blank"}>
+                  <PhoneAndroidIcon sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>3106409960</span>
+                </Button>
+              </Box>
+              <Box>
+                <Tooltip title="Facebook" placement="right">
+                  <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="https://web.facebook.com/profile.php?id=100090006045246"
+                    target={"_blank"}>
+                    <Facebook sx={{ mr: 2 }} />
+                    <span style={{ color: "#000032" }}>Asesorías en Seguridad y Salud en el Trabajo</span>
+                  </Button>  
+                </Tooltip>
+              </Box>
+              <Box>
+                <Tooltip title="Instagram" placement="right">
+                  <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href="https://www.instagram.com/ingenieroasesorsst/"
+                    target={"_blank"}>
+                    <Instagram sx={{ mr: 2 }} />
+                    <span style={{ color: "#000032" }}>Asesorías en Seguridad y Salud en el Trabajo</span>
+                  </Button>
+                </Tooltip>
+              </Box>
+              <Box>
+                <Tooltip title="Tiktok" placement="right">
+                  <Button sx={{ color: "red", fontSize: "16px", textTransform:"none" }} href={`https://www.tiktok.com/@ingeasesor`} target={"_blank"}>
+                    <Box sx={{ mr: 2.5, mt:.5, mb:-0.5 }} ><Tiktok size={21}/></Box>
+                    <span style={{ color: "#000032" }}>Asesorías en Seguridad y Salud en el Trabajo</span>
+                  </Button>
+                </Tooltip>
+              </Box>
+              <Box>
+                <Tooltip title="LinkedIn" placement="right">
+                  <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} href={`https://www.linkedin.com/in/gonzalez-eduard-2860a33a2/`} target={"_blank"}>
+                    <LinkedIn sx={{ mr: 2 }} />
+                    <span style={{ color: "#000032" }}>Ingeniero asesor SST y PESV</span>
+                  </Button>
+                </Tooltip>
+              </Box>
+              <Box>
+                <Tooltip title="Linktree" placement="right">
+                  <Button sx={{ color: "red", fontSize: "16px", textTransform:"none" }} href={`https://linktr.ee/ingeasesor?utm_source=linktree_admin_share`} target={"_blank"}>
+                    <Box sx={{ mr: 2.5, mt:.5, mb:-0.5 }} ><Linktree size={21}/></Box>
+                    <span style={{ color: "#000032" }}>Asesorías en Seguridad y Salud en el Trabajo</span>
+                  </Button>
+                </Tooltip>
+              </Box>
+              <Box>
+                <Button sx={{ color: "#efb603", fontSize: "16px", textTransform:"none" }} component={ReactWhatsapp} number="57-310-640-9960" message={wMessage}>
+                  <WhatsApp sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>3106409960</span>
+                </Button>
+              </Box>
+              <Box>
+                <Button sx={{ color: "red", fontSize: "16px", textTransform:"none" }} href={`https://www.google.com/maps/place/${encodeURIComponent("Cali, Valle Del Cauca, Colombia")}`} target={"_blank"}>
+                  <LocationOnIcon sx={{ mr: 2 }} />
+                  <span style={{ color: "#000032" }}>Cali, Valle del Cauca, Colombia.</span>
+                </Button>
+              </Box>
+              
             </Box>
           </Grid>
         </Grid>
@@ -219,10 +306,12 @@ const Contact = () => {
       <Snackbar
         open={open}
         autoHideDuration={3000}
-        anchorOrigin={{ vertical, horizontal}}
+        anchorOrigin={{ vertical, horizontal }}
         onClose={handleClose}
       >
-        <Alert severity={variant} variant="filled" sx={{fontSize:"18px"}}>{snackbarMessage}</Alert>
+        <Alert severity={variant} variant="filled" sx={{ fontSize: "18px" }}>
+          {snackbarMessage}
+        </Alert>
       </Snackbar>
     </Container>
   );
