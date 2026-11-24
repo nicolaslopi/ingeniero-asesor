@@ -9,7 +9,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import NavListDrawerResponsive from "./NavbarDrawer";
@@ -38,6 +38,18 @@ const navLinks = [
 export default function Navbar() {
 
   const {services, setServices} = useContext(ServicesContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Navega a una sección de la página de inicio ("#servicios", etc.).
+  // Desde otras rutas (p. ej. /tienda-virtual) vuelve primero a "/".
+  const goTo = (hash) => {
+    if (location.pathname === "/") {
+      window.location.href = hash;
+    } else {
+      navigate("/" + hash);
+    }
+  };
 
   const [openDrawer, setOpenDrawer] = useState(false);
   const [navbarState, setNavbarState] = useState(true);
@@ -54,11 +66,11 @@ export default function Navbar() {
     console.log(e.currentTarget.name)
     const index = navLinks.findIndex(link => link.id === e.currentTarget.name);
     console.log(index)
-    window.location.href = navLinks[index].path
+    goTo(navLinks[index].path)
   };
 
   const handleClickItem = () => {
-    window.location.href = navLinks[2].path;
+    goTo(navLinks[2].path);
     setAnchorEl(null);
   };
 
@@ -69,7 +81,7 @@ export default function Navbar() {
   const selectService = (index) => {
     [services[1], services[index]] = [services[index], services[1]];
     setServices(services);
-    window.location.href = "#servicios"
+    goTo("#servicios")
     setAnchorEl(null);
   } 
 
@@ -193,6 +205,7 @@ export default function Navbar() {
         <NavListDrawerResponsive
           onClick={() => setOpenDrawer(false)}
           navLinks={navLinks}
+          goTo={goTo}
         />
       </Drawer>
       {/* <Menu

@@ -6,6 +6,7 @@ import Footer from "./components/MainPage/Footer";
 import { useState } from "react";
 import { useEffect } from "react";
 import MainPage from "./components/MainPage/MainPage";
+import VirtualStore from "./components/Store/VirtualStore";
 import { motion } from "framer-motion";
 import { ServicesProvider } from "./components/MainPage/ServicesContext";
 
@@ -87,6 +88,7 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="/tienda-virtual" element={<VirtualStore />} />
           </Routes>
         </Box>
       )}

@@ -14,8 +14,22 @@ import { ServicesProvider } from "./ServicesContext";
 import DigitalProducts from "./DigitalProducts";
 import FreeResources from "./FreeResources";
 import Quotes from "./Quotes";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const MainPage = () => {
+  const { hash } = useLocation();
+
+  // Al llegar desde otra ruta (p. ej. /tienda-virtual) con un ancla, desplazarse a esa sección.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const target = hash ? document.getElementById(hash.slice(1)) : null;
+      if (target) target.scrollIntoView();
+      else window.scrollTo(0, 0);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const wMessage = "Hola, estoy interesado en una asesoría SST para mi empresa, podrían darme más información"
 
   // const handleWhatsappConversion = () => {

@@ -11,7 +11,7 @@ import {
   import { useContext, useState } from "react";
 import { ServicesContext } from "../MainPage/ServicesContext";
   
-  export default function NavListDrawer({ onClick, navLinks }) {
+  export default function NavListDrawer({ onClick, navLinks, goTo }) {
 
     const {services, setServices} = useContext(ServicesContext);
 
@@ -21,7 +21,7 @@ import { ServicesContext } from "../MainPage/ServicesContext";
           <List>
             {navLinks.map((item) => (
               <ListItem disablePadding key={item.title} sx={{"&:hover": {backgroundColor:"#f99f00", color:"#fff"}}}>
-                <ListItemButton href={item.path} component={Button} >
+                <ListItemButton onClick={() => goTo(item.path)} component={Button} >
                   {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
                   <ListItemText primary={item.title} sx={{fontWeight:"", color:"#000032"}}/>
                   {item.path === '#tienda-virtual' && 
