@@ -1,0 +1,93 @@
+// Número de WhatsApp usado en el catálogo de la tienda (formato internacional, sin "+").
+export const STORE_WHATSAPP = "573122377845";
+
+export const storeCategories = [
+  { value: "all", label: "Todos los Productos" },
+  { value: "software", label: "Software & Herramientas" },
+  { value: "kits", label: "Kits Digitales & Cursos" },
+  { value: "asesoria", label: "Asesorías & Mentorías" },
+];
+
+export const storeProducts = [
+  {
+    id: "INF-001",
+    category: "kits",
+    image: "/images/tienda/inf-001.jpg",
+    format: "Kit Digital (Suite Excel + Masterclass + Slides + Guía)",
+    title: "Master Kit Auditor SG-SST 360°",
+    price: "$96,000 COP",
+    buyUrl: "https://go.hotmart.com/U108509518I?dp=1",
+  },
+  {
+    id: "INF-002",
+    category: "kits",
+    image: "/images/tienda/inf-002.jpg",
+    format: "Ebook PDF + Masterclass + Infografía",
+    title: "Kit Master IA + SST (Promptbook 50 Prompts)",
+    price: "$30,000 COP",
+    buyUrl: "https://pay.hotmart.com/I108527831U",
+  },
+  {
+    id: "INF-003",
+    category: "kits",
+    image: "/images/tienda/inf-003.jpg",
+    format: "Curso Digital (4 Módulos + 7 Videos + 6 Plantillas)",
+    title: "Kit Experto: Investigación de Accidentes (Res. 1401)",
+    price: "$97,000 COP",
+    buyUrl: "https://go.hotmart.com/J108458114U?dp=1",
+  },
+  {
+    id: "INF-004",
+    category: "asesoria",
+    image: "/images/tienda/inf-004.jpg",
+    format: "Asesoría Técnica Puntual / Revisión de Expediente",
+    title: "Asesoría / Asistencia Técnica en Investigación",
+    price: "$800,000 COP",
+    buyUrl: "https://pay.hotmart.com/E108531340D",
+  },
+  {
+    id: "INF-005",
+    category: "asesoria",
+    image: "/images/tienda/inf-005.jpg",
+    format: "Asesoría Técnica Puntual / Revisión de Expediente",
+    title: "Asesoría Técnica Especializada en SG-SST",
+    price: "$200,000 COP",
+    buyUrl: "https://pay.hotmart.com/I108528951G",
+  },
+  {
+    id: "INF-006",
+    category: "asesoria",
+    image: "/images/tienda/inf-006.jpg",
+    format: "Asesoría Técnica Puntual / Revisión de Expediente",
+    title: "Asesoría Técnica en Plan Estratégico PESV",
+    price: "$200,000 COP",
+    buyUrl: "https://pay.hotmart.com/P108530198O",
+  },
+  {
+    id: "INF-007",
+    category: "asesoria",
+    image: "/images/tienda/inf-007.jpg",
+    format: "Mentoría Privada 90 min (Videollamada)",
+    title: "Mentoría VIP 1 a 1: Blindaje SG-SST",
+    price: "$350,000 COP",
+    buyUrl: "https://go.hotmart.com/Y108532689B?dp=1",
+  },
+  {
+    id: "INF-008",
+    category: "software",
+    image: "/images/tienda/inf-008.jpg",
+    format: "Software Matriz de Peligros",
+    title: "Matriz GTC 45 PRO – Software Automatizado",
+    price: "$70,000 COP",
+    buyUrl: "https://pay.hotmart.com/H108567825G",
+  },
+  {
+    id: "INF-009",
+    category: "software",
+    image: "/images/tienda/inf-009.jpg",
+    format: "Software Inspector de Vehículos",
+    title: "Software Inspector Preoperacional PESV",
+    price: "$69,000 COP",
+    buyUrl: "https://pay.hotmart.com/U108583714U",
+  },
+];

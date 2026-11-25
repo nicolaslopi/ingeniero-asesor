@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 
 const Footer = () => {
     return (
@@ -8,13 +8,12 @@ const Footer = () => {
                 <img
                   width={51}
                   height={55}
-                  src="images/logo-sst-colores-copia.png"
-                  alt="logo-sst-colores"
+                  src="images/logo-sst-colores-copia-min.png"
+                  alt="Logo Ingeniero Asesor SST"
                   loading="lazy"
             />
             </Typography>
-            <p style={{color:'white'}}>Copyright © 2023 Ingeniero Asesor</p>
-            <Button variant="contained">Holaaa</Button>
+            <p style={{color:'white'}}>Copyright © 2026 Ingeniero Asesor SST</p>
             </Grid>
         </Container>
     );

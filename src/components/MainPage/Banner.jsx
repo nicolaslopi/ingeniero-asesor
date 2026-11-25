@@ -1,39 +1,105 @@
-import { Box, Button, Container, Grid, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Hidden,
+  Typography,
+} from "@mui/material";
+import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
-    <Container>
-      <Grid container sx={{ pt: 2, pb:4 }}>
-        <Grid item xs={12} md={6}>
+    <Container sx={{ pb: 1, pt:{xs:1, md:4} }}>
+      <Grid container sx={{ pb: 4, alignItems: "center" }}>
+        <Grid item xs={12} md={6} sx={{ mb: 2 }}>
           <Box sx={{ color: "white" }}>
-            <Typography variant="h3" sx={{ mb: 2, textAlign:"justify", fontWeight: "bold" }}>
-              Asesorías y Consultorías en Seguridad y Salud en el Trabajo - Ambiental
+            <Typography
+              variant="h3"
+              sx={{ mb: 5, textAlign: {xs:"center", md:"justify"}, fontWeight: "bold" }}
+              component={motion.div}
+              initial={{ translateX: 90, opacity: 0 }}
+              whileInView={{ translateX: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              exit={{translateX:0}}
+            >
+              {/* Asesorías, Consultorías y Mentorías en Seguridad y Salud en el Trabajo y Plan Estratégico de Seguridad Vial */}
+              Evite sanciones y proteja a su equipo: Soluciones en SST y PESV para Pymes en Colombia
             </Typography>
-            <Typography variant="h5" sx={{ my: 3, textAlign:"justify"  }}>
-              Ponemos a su disposición nuestra experiencia en asesoría y
-              consultoría ambiental, seguridad y salud en el trabajo, para el
-              cumplimiento de los requisitos legales y el diseño e
-              implementación de sistemas integrados de gestión, impulsando a las
-              empresas al logro de sus objetivos y metas demostrando conciencia
-              ambiental y cultura de seguridad y salud en el trabajo
-            </Typography>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Button href="#services" variant="outlined" sx={{ color: "#f99f00", fontSize: "20px", borderColor:"#f99f00", "&:hover":{ backgroundColor:'#f99f00', color:"#000032",borderColor:"#f99f00"}}}>
+            <Box
+              sx={{ display: "flex", justifyContent: "center" }}
+              component={motion.div}
+              initial={{ translateX: -90, opacity: 0 }}
+              whileInView={{ translateX: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <Button
+                href="#servicios"
+                variant="outlined"
+                sx={{
+                  color: "#f99f00",
+                  fontSize: { xs: "20px", md: "25px" },
+                  borderColor: "#f99f00",
+                  border: 2,
+                  borderRadius: 50,
+                  "&:hover": {
+                    backgroundColor: "#f99f00",
+                    color: "#000032",
+                    borderColor: "#f99f00",
+                    border: 2,
+                  },
+                }}
+              >
                 Conoce nuestros servicios
               </Button>
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src="images/logo-sst-colores-copia.png"
-              alt=""
-              width={300}
-              st
-              yle={{ my: "auto" }}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          component={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{ translateX: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Hidden only={["xs", "sm"]}>
+          <Box
+            sx={{
+              backgroundColor: "#000032",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <motion.img
+              src="images/logo-sst-colores-copia-min.png"
+              alt="Logo Ingeniero Asesor SST"
+              width={"300px"}
+              style={{ my: "auto" }}
+              whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
             />
           </Box>
+          </Hidden>
+          <Hidden only={["md", "lg", "xl"]}>
+          <Box
+            sx={{
+              backgroundColor: "#000032",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <motion.img
+              src="images/logo-sst-colores-copia-min.png"
+              alt="Logo Ingeniero Asesor SST"
+              width={"200px"}
+              style={{ my: "auto" }}
+              whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            />
+          </Box>
+          </Hidden>
         </Grid>
       </Grid>
     </Container>

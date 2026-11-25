@@ -1,0 +1,424 @@
+/* Estilos del Catálogo Oficial IngeAsesor (/tienda-virtual).
+   Todo va bajo .catalogo-ingeasesor para no afectar el resto del sitio. */
+
+.catalogo-ingeasesor {
+    --primary-blue: #003366;
+    --secondary-blue: #001F3F;
+    --accent-orange: #FF6600;
+    --accent-orange-hover: #E65C00;
+    --dark-navy: #0A192F;
+    --light-bg: #F4F7FA;
+    --card-bg: #FFFFFF;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    --success-green: #25D366;
+    --navbar-blue: #000032; /* mismo azul del navbar del sitio */
+
+    background-color: var(--light-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 60px;
+}
+
+.catalogo-ingeasesor,
+.catalogo-ingeasesor *:not(i) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Top Bar */
+.catalogo-ingeasesor .top-bar {
+    background-color: var(--navbar-blue);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    font-size: 0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.catalogo-ingeasesor .top-bar-info {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.catalogo-ingeasesor .top-bar-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.catalogo-ingeasesor .top-bar-info a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.catalogo-ingeasesor .top-bar-info a:hover {
+    color: var(--accent-orange);
+}
+
+/* Header */
+.catalogo-ingeasesor .catalog-header {
+    background: var(--navbar-blue);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.catalogo-ingeasesor .header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.catalogo-ingeasesor .catalog-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+.catalogo-ingeasesor .catalog-header p.subtitle {
+    font-size: 1.12rem;
+    color: #CBD5E1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Container */
+.catalogo-ingeasesor .catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 20px;
+}
+
+/* Biografía del Creador */
+.catalogo-ingeasesor .author-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.catalogo-ingeasesor .author-photo-wrapper {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary-blue);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    background-color: #E2E8F0;
+}
+
+.catalogo-ingeasesor .author-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalogo-ingeasesor .author-details {
+    flex: 1;
+    min-width: 280px;
+}
+
+.catalogo-ingeasesor .author-badge {
+    display: inline-block;
+    background-color: rgba(0, 51, 102, 0.1);
+    color: var(--primary-blue);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.catalogo-ingeasesor .author-details h2 {
+    font-size: 1.6rem;
+    color: var(--dark-navy);
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.catalogo-ingeasesor .author-title {
+    font-size: 0.98rem;
+    color: var(--accent-orange);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.catalogo-ingeasesor .author-bio {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.65;
+}
+
+/* Filtros */
+.catalogo-ingeasesor .filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.catalogo-ingeasesor .filter-btn {
+    background-color: #FFFFFF;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+}
+
+.catalogo-ingeasesor .filter-btn:hover,
+.catalogo-ingeasesor .filter-btn.active {
+    background-color: var(--accent-orange);
+    color: white;
+    border-color: var(--accent-orange);
+    box-shadow: 0 4px 14px rgba(255, 102, 0, 0.28);
+}
+
+/* Grilla de productos */
+.catalogo-ingeasesor .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 30px;
+}
+
+.catalogo-ingeasesor .product-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo-ingeasesor .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.catalogo-ingeasesor .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #E2E8F0;
+    overflow: hidden;
+}
+
+.catalogo-ingeasesor .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.catalogo-ingeasesor .product-card:hover .card-image-wrapper img {
+    transform: scale(1.04);
+}
+
+.catalogo-ingeasesor .badge-id {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    background-color: var(--primary-blue);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.catalogo-ingeasesor .card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.catalogo-ingeasesor .card-format {
+    font-size: 0.82rem;
+    color: var(--accent-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.catalogo-ingeasesor .card-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 14px;
+    line-height: 1.35;
+}
+
+.catalogo-ingeasesor .card-price-row {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.catalogo-ingeasesor .price-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.catalogo-ingeasesor .price-value {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--dark-navy);
+}
+
+.catalogo-ingeasesor .btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background-color: var(--accent-orange);
+    color: white;
+    text-decoration: none;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.catalogo-ingeasesor .btn-buy:hover {
+    background-color: var(--accent-orange-hover);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.catalogo-ingeasesor .btn-whatsapp-consult {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.catalogo-ingeasesor .btn-whatsapp-consult:hover {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border-color: var(--success-green);
+}
+
+/* Sección de afiliados */
+.catalogo-ingeasesor .affiliate-section {
+    background: linear-gradient(135deg, var(--dark-navy) 0%, #002244 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 42px;
+    margin: 65px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.catalogo-ingeasesor .affiliate-badge {
+    background: rgba(255, 102, 0, 0.2);
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.catalogo-ingeasesor .affiliate-section h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.catalogo-ingeasesor .affiliate-section p {
+    max-width: 720px;
+    color: #94A3B8;
+    margin-bottom: 28px;
+    font-size: 1.02rem;
+}
+
+.catalogo-ingeasesor .btn-affiliate {
+    background-color: var(--accent-orange);
+    color: white;
+    padding: 14px 34px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(255, 102, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.catalogo-ingeasesor .btn-affiliate:hover {
+    background-color: #FF771A;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(255, 102, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .catalogo-ingeasesor .catalog-header h1 { font-size: 1.75rem; }
+    .catalogo-ingeasesor .top-bar { flex-direction: column; text-align: center; }
+    .catalogo-ingeasesor .top-bar-info { justify-content: center; }
+    .catalogo-ingeasesor .author-card { flex-direction: column; text-align: center; }
+    .catalogo-ingeasesor .affiliate-section { padding: 28px; }
+    .catalogo-ingeasesor .affiliate-section h2 { font-size: 1.45rem; }
+}
+
+/* Evita desbordes horizontales en teléfonos angostos (minmax de 330px) */
+@media (max-width: 400px) {
+    .catalogo-ingeasesor .product-grid { grid-template-columns: 1fr; }
+}
